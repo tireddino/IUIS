@@ -292,7 +292,7 @@ namespace IUIS.Forms.Students
                 return false;
             }
             
-            if (!string.IsNullOrWhiteSpace(txtEmail.Text) && !txtEmail.Text.Contains("@"))
+            if (!string.IsNullOrWhiteSpace(txtEmail.Text) && !txtEmail.Text.IndexOf("@", StringComparison.Ordinal) > 0)
             {
                 MessageBox.Show("Invalid email format.", "Validation Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -410,10 +410,10 @@ namespace IUIS.Forms.Students
                 if (!string.IsNullOrWhiteSpace(searchTerm))
                 {
                     students = students.Where(s =>
-                        s.StudentId.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
-                        s.FirstName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
-                        s.LastName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
-                        s.Email.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)).ToList();
+                        s.StudentId.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                        s.FirstName.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                        s.LastName.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                        s.Email.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
                 }
                 
                 dgvStudents.DataSource = null;

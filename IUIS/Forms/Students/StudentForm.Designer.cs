@@ -391,7 +391,6 @@ namespace IUIS.Forms.Students
             // 
             this.txtSearch.Location = new System.Drawing.Point(80, 13);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PlaceholderText = "Search by ID, name, or email...";
             this.txtSearch.Size = new System.Drawing.Size(300, 23);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
