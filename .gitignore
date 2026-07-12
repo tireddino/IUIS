@@ -1,51 +1,44 @@
 ```
-# Build results
-[IUIS/bin/
-[IUIS/obj/
-
-# User-specific files
-.vs/
+# Build artifacts
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.config
 *.user
-*.userosscache
-*.suo
 
-# Log files
+# Dependencies
+packages/
+node_modules/
+vendor/
+
+# Logs
 *.log
 
-# Environment specific settings
+# Environment
 .env
 .env.local
-*.env
+*.env.*
 
-# OS generated files
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
 .DS_Store
 Thumbs.db
 
-# IDE specific files
-.vscode/
-.idea/
+# Test and coverage
+coverage/
+htmlcov/
+*.coverage
+.testcoverage
 
-# NuGet Packages
-*.nupkg
-packages/
-
-# Compiled Binary Files
-*.o
-*.obj
-*.exe
-*.dll
-*.so
-*.a
-*.out
-
-# Python cache
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Dependencies
-node_modules/
-venv/
-.venv/
+# Distribution
+dist/
+build/
+target/
 ```
