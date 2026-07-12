@@ -415,10 +415,16 @@ namespace IUIS.Forms.Students
 
         private void DgvStudents_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvStudents.SelectedRows.Count > 0)
+            if (dgvStudents.SelectedRows.Count > 0 && dgvStudents.Rows.Count > 0)
             {
                 var row = dgvStudents.SelectedRows[0];
-                var studentId = row.Cells["StudentId"].Value?.ToString();
+                string studentId = null;
+                
+                // Safely get the StudentId value
+                if (row.Cells.Count > 0 && row.Cells[0].Value != null)
+                {
+                    studentId = row.Cells[0].Value?.ToString();
+                }
                 
                 if (!string.IsNullOrEmpty(studentId))
                 {
