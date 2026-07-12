@@ -1,49 +1,125 @@
-```gitignore
-# Build artifacts
-*.obj
-*.exe
-*.dll
-*.pdb
-*.userprefs
-*.cache
-*.compiled
-[Ii]ndex
+```csharp
+# Build Results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
 *.user
-*.suo
 *.userosscache
-*.sln.docstates
-
-# Dependencies
-packages/
-bin/
-obj/
-out/
-
-# Logs
+*.suo
+*.userprefs
+*.pidb
 *.log
-
-# Environment
-.env
-.env.local
-*.env
-
-# OS generated files
-.DS_Store
-Thumbs.db
-ehthumbs.db
-Icon?
-desktop.ini
+*.vcxproj.filters
+*.VC.db
+*.VC.VC.opendb
 
 # Visual Studio Code
 .vscode/
 
-# Temporary files
-*.tmp
-*.temp
-*.bak
-*.old
-
-# User-specific files
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+*.DotSettings
 *.userprefs
-*.useroscache
+
+# Visual Studio
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.VC.opendb
+*.VC.db
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NUNIT
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+
+# Build results for Visual Studio 2019
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Environment specific settings
+.env
+.env.local
+*.env*
+
+# Coverage results
+coverage/
+*.cover
+
+# Compressed files
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
 ```
