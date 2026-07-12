@@ -130,7 +130,7 @@ namespace IUIS.Forms.Students
             
             dgvStudents.Columns.Add(new DataGridViewTextBoxColumn
             {
-                DataPropertyName = "CourseId",
+                DataPropertyName = "CourseName",
                 HeaderText = "Course",
                 Width = 100
             });
@@ -167,9 +167,23 @@ namespace IUIS.Forms.Students
             try
             {
                 var students = _studentRepository.GetAll().Where(s => s.IsActive).ToList();
+                var courses = _courseRepository.GetAll().Where(c => c.IsActive).ToList();
+                
+                // Create anonymous objects with course name instead of ID
+                var studentData = students.Select(s => new
+                {
+                    s.StudentId,
+                    FullName = s.FullName,
+                    s.Email,
+                    s.Phone,
+                    CourseName = courses.FirstOrDefault(c => c.Id == s.CourseId)?.CourseCode ?? "N/A",
+                    s.YearLevel,
+                    s.EnrollmentStatus
+                }).ToList();
+                
                 dgvStudents.DataSource = null;
-                dgvStudents.DataSource = students;
-                lblRecordCount.Text = $"Total Records: {students.Count}";
+                dgvStudents.DataSource = studentData;
+                lblRecordCount.Text = $"Total Records: {studentData.Count}";
             }
             catch (Exception ex)
             {
@@ -403,8 +417,17 @@ namespace IUIS.Forms.Students
         {
             if (dgvStudents.SelectedRows.Count > 0)
             {
-                var student = (Student)dgvStudents.SelectedRows[0].DataBoundItem;
-                PopulateFields(student);
+                var row = dgvStudents.SelectedRows[0];
+                var studentId = row.Cells["StudentId"].Value?.ToString();
+                
+                if (!string.IsNullOrEmpty(studentId))
+                {
+                    var student = _studentRepository.GetByStudentId(studentId);
+                    if (student != null)
+                    {
+                        PopulateFields(student);
+                    }
+                }
             }
         }
 
@@ -414,6 +437,7 @@ namespace IUIS.Forms.Students
             {
                 var searchTerm = txtSearch.Text.Trim();
                 var students = _studentRepository.GetAll().Where(s => s.IsActive).ToList();
+                var courses = _courseRepository.GetAll().Where(c => c.IsActive).ToList();
                 
                 if (!string.IsNullOrWhiteSpace(searchTerm))
                 {
@@ -424,9 +448,21 @@ namespace IUIS.Forms.Students
                         s.Email.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
                 }
                 
+                // Create anonymous objects with course name instead of ID
+                var studentData = students.Select(s => new
+                {
+                    s.StudentId,
+                    FullName = s.FullName,
+                    s.Email,
+                    s.Phone,
+                    CourseName = courses.FirstOrDefault(c => c.Id == s.CourseId)?.CourseCode ?? "N/A",
+                    s.YearLevel,
+                    s.EnrollmentStatus
+                }).ToList();
+                
                 dgvStudents.DataSource = null;
-                dgvStudents.DataSource = students;
-                lblRecordCount.Text = $"Showing: {students.Count} records";
+                dgvStudents.DataSource = studentData;
+                lblRecordCount.Text = $"Showing: {studentData.Count} records";
             }
             catch (Exception ex)
             {
