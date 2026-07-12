@@ -52,10 +52,18 @@ namespace IUIS.Forms.Students
                     lbl.Font = new Font("Segoe UI", 9F);
                     lbl.ForeColor = Color.FromArgb(51, 51, 51);
                 }
-                else if (ctrl is TextBox txt || ctrl is ComboBox cb || ctrl is DateTimePicker dtp)
+                else if (ctrl is TextBox txtBox)
                 {
-                    txt.Font = new Font("Segoe UI", 9F);
-                    txt.BorderStyle = BorderStyle.FixedSingle;
+                    txtBox.Font = new Font("Segoe UI", 9F);
+                    txtBox.BorderStyle = BorderStyle.FixedSingle;
+                }
+                else if (ctrl is ComboBox cb)
+                {
+                    cb.Font = new Font("Segoe UI", 9F);
+                }
+                else if (ctrl is DateTimePicker dtp)
+                {
+                    dtp.Font = new Font("Segoe UI", 9F);
                 }
             }
             
@@ -292,7 +300,7 @@ namespace IUIS.Forms.Students
                 return false;
             }
             
-            if (!string.IsNullOrWhiteSpace(txtEmail.Text) && !txtEmail.Text.IndexOf("@", StringComparison.Ordinal) > 0)
+            if (!string.IsNullOrWhiteSpace(txtEmail.Text) && txtEmail.Text.IndexOf("@", StringComparison.Ordinal) <= 0)
             {
                 MessageBox.Show("Invalid email format.", "Validation Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);

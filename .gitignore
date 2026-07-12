@@ -1,4 +1,4 @@
-```
+```gitignore
 # Build artifacts
 *.obj
 *.exe
@@ -8,31 +8,24 @@
 *.cache
 *.compiled
 [Ii]ndex
-*.zip
-*.tar*
-*.gz
-*.7z
-*.rar
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
 
 # Dependencies
 packages/
-node_modules/
-bower_components/
+bin/
+obj/
+out/
 
 # Logs
 *.log
 
-# User-specific files
-.vs/
-*.user
-*.userosscache
-*.suo
-*.userprefs
-
-# Environment specific settings
+# Environment
 .env
 .env.local
-*.env.*
+*.env
 
 # OS generated files
 .DS_Store
@@ -41,20 +34,16 @@ ehthumbs.db
 Icon?
 desktop.ini
 
-# Testing
-coverage/
-*.cover
-*.log
-
-# IDE
+# Visual Studio Code
 .vscode/
-.idea/
 
-# Output directory
-bin/
-obj/
-Debug/
-Release/
-x64/
-x86/
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.old
+
+# User-specific files
+*.userprefs
+*.useroscache
 ```
