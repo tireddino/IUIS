@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using IUIS.Models;
@@ -244,8 +245,8 @@ namespace IUIS.Utilities
         {
             var students = GetAll();
             return students.Where(s => 
-                (s.FirstName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
-                 s.LastName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) && 
+                (s.FirstName.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                 s.LastName.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0) && 
                 s.IsActive).ToList();
         }
     }
@@ -335,9 +336,9 @@ namespace IUIS.Utilities
         public List<Employee> GetFaculty()
         {
             var employees = GetAll();
-            return employees.Where(e => e.Position.Contains("Faculty", StringComparison.OrdinalIgnoreCase) || 
-                                        e.Position.Contains("Instructor", StringComparison.OrdinalIgnoreCase) ||
-                                        e.Position.Contains("Professor", StringComparison.OrdinalIgnoreCase)).ToList();
+            return employees.Where(e => e.Position.IndexOf("Faculty", StringComparison.OrdinalIgnoreCase) >= 0 || 
+                                        e.Position.IndexOf("Instructor", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                                        e.Position.IndexOf("Professor", StringComparison.OrdinalIgnoreCase) >= 0).ToList();
         }
     }
 
@@ -354,13 +355,13 @@ namespace IUIS.Utilities
         public List<Book> SearchByTitle(string searchTerm)
         {
             var books = GetAll();
-            return books.Where(b => b.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) && b.IsActive).ToList();
+            return books.Where(b => b.Title.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 && b.IsActive).ToList();
         }
 
         public List<Book> SearchByAuthor(string searchTerm)
         {
             var books = GetAll();
-            return books.Where(b => b.Author.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) && b.IsActive).ToList();
+            return books.Where(b => b.Author.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 && b.IsActive).ToList();
         }
     }
 

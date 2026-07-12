@@ -135,7 +135,7 @@ namespace IUIS.Forms.Dashboard
 
         private void BtnSubjects_Click(object sender, EventArgs e)
         {
-            var form = new Subjects.SubjectForm();
+            var form = new Subjects.SubjectsForm();
             OpenChildForm(form, sender);
         }
 
@@ -147,7 +147,7 @@ namespace IUIS.Forms.Dashboard
 
         private void BtnPayments_Click(object sender, EventArgs e)
         {
-            var form = new Payments.PaymentForm();
+            var form = new Payments.PaymentsForm();
             OpenChildForm(form, sender);
         }
 
@@ -159,7 +159,7 @@ namespace IUIS.Forms.Dashboard
 
         private void BtnEmployees_Click(object sender, EventArgs e)
         {
-            var form = new Employees.EmployeeForm();
+            var form = new Employees.EmployeesForm();
             OpenChildForm(form, sender);
         }
 
