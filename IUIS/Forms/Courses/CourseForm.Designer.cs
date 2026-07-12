@@ -180,6 +180,7 @@ namespace IUIS.Forms.Courses
             // numTotalUnits
             // 
             this.numTotalUnits.Location = new System.Drawing.Point(180, 263);
+            this.numTotalUnits.Maximum = new decimal(new int[] { 300, 0, 0, 0 });
             this.numTotalUnits.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             this.numTotalUnits.Name = "numTotalUnits";
             this.numTotalUnits.Size = new System.Drawing.Size(80, 23);
