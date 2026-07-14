@@ -29,6 +29,9 @@ namespace IUIS.Models
         [JsonPropertyName("studentId")]
         public string StudentId { get; set; } = string.Empty;
 
+        [JsonPropertyName("id")]
+        public string Id { get; set; } = string.Empty;
+
         [JsonPropertyName("firstName")]
         public string FirstName { get; set; } = string.Empty;
 
@@ -56,11 +59,17 @@ namespace IUIS.Models
         [JsonPropertyName("courseId")]
         public string CourseId { get; set; } = string.Empty;
 
+        [JsonPropertyName("course")]
+        public string Course { get; set; } = string.Empty;
+
         [JsonPropertyName("yearLevel")]
         public int YearLevel { get; set; }
 
         [JsonPropertyName("enrollmentStatus")]
         public string EnrollmentStatus { get; set; } = "Active";
+
+        [JsonPropertyName("status")]
+        public string Status { get; set; } = "Active";
 
         [JsonPropertyName("guardianName")]
         public string GuardianName { get; set; } = string.Empty;
@@ -68,6 +77,7 @@ namespace IUIS.Models
         [JsonPropertyName("guardianContact")]
         public string GuardianContact { get; set; } = string.Empty;
 
+        [JsonIgnore]
         public string FullName => $"{FirstName} {MiddleName} {LastName}".Trim();
     }
 
@@ -103,6 +113,9 @@ namespace IUIS.Models
         [JsonPropertyName("subjectCode")]
         public string SubjectCode { get; set; } = string.Empty;
 
+        [JsonPropertyName("code")]
+        public string Code { get; set; } = string.Empty;
+
         [JsonPropertyName("subjectName")]
         public string SubjectName { get; set; } = string.Empty;
 
@@ -123,6 +136,12 @@ namespace IUIS.Models
 
         [JsonPropertyName("courseId")]
         public string CourseId { get; set; } = string.Empty;
+
+        [JsonPropertyName("courseCode")]
+        public string CourseCode { get; set; } = string.Empty;
+
+        [JsonIgnore]
+        public string DisplayName => $"{Code} - {SubjectName}";
     }
 
     /// <summary>
@@ -143,10 +162,16 @@ namespace IUIS.Models
         public string AcademicYear { get; set; } = string.Empty;
 
         [JsonPropertyName("semester")]
-        public int Semester { get; set; }
+        public string Semester { get; set; } = "1";
+
+        [JsonPropertyName("term")]
+        public string Term { get; set; } = string.Empty;
 
         [JsonPropertyName("enrollmentDate")]
         public DateTime EnrollmentDate { get; set; } = DateTime.Now;
+
+        [JsonPropertyName("dateEnrolled")]
+        public DateTime DateEnrolled { get; set; } = DateTime.Now;
 
         [JsonPropertyName("status")]
         public string Status { get; set; } = "Enrolled";
@@ -154,8 +179,29 @@ namespace IUIS.Models
         [JsonPropertyName("subjectIds")]
         public string[] SubjectIds { get; set; } = Array.Empty<string>();
 
+        [JsonPropertyName("subjects")]
+        public List<Subject> Subjects { get; set; } = new List<Subject>();
+
         [JsonPropertyName("totalUnits")]
         public int TotalUnits { get; set; }
+
+        [JsonPropertyName("tuitionFee")]
+        public decimal TuitionFee { get; set; }
+
+        [JsonPropertyName("miscellaneousFee")]
+        public decimal MiscellaneousFee { get; set; }
+
+        [JsonPropertyName("totalAssessment")]
+        public decimal TotalAssessment { get; set; }
+
+        [JsonPropertyName("amountPaid")]
+        public decimal AmountPaid { get; set; }
+
+        [JsonPropertyName("balance")]
+        public decimal Balance { get; set; }
+
+        [JsonPropertyName("createdAt")]
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 
     /// <summary>
