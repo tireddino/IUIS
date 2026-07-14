@@ -298,6 +298,15 @@ namespace IUIS.Utilities
                 e.Semester == semester && 
                 e.IsActive);
         }
+
+        public Enrollment? GetByStudentAndTerm(string studentId, string term)
+        {
+            var enrollments = GetAll();
+            return enrollments.FirstOrDefault(e =>
+                e.StudentId == studentId &&
+                e.Term == term &&
+                e.IsActive);
+        }
     }
 
     public class PaymentRepository : JsonRepository<Payment>
