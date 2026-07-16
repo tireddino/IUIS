@@ -248,12 +248,15 @@ namespace IUIS.Forms.Enrollment
 
         private void btnRemoveSubject_Click(object sender, EventArgs e)
         {
-            if (dgvSelectedSubjects.CurrentRow != null)
+            if (dgvSelectedSubjects.CurrentRow != null && dgvSelectedSubjects.CurrentRow.Index >= 0)
             {
                 var subject = (Subject)dgvSelectedSubjects.CurrentRow.DataBoundItem;
-                _selectedSubjects.Remove(subject);
-                RefreshSubjectGrid();
-                CalculateFees();
+                if (subject != null)
+                {
+                    _selectedSubjects.Remove(subject);
+                    RefreshSubjectGrid();
+                    CalculateFees();
+                }
             }
         }
 
