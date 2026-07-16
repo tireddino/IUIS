@@ -681,5 +681,7 @@ namespace IUIS.Forms.Enrollment
         private System.Windows.Forms.Button btnEnroll;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnPrintAssessment;
+        private System.Windows.Forms.GroupBox grpEnrollmentHistory;
+        private System.Windows.Forms.DataGridView dgvEnrollmentHistory;
     }
 }
