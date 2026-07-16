@@ -179,6 +179,7 @@ namespace IUIS.Forms.Subjects
             this.cmbCourse.Name = "cmbCourse";
             this.cmbCourse.Size = new System.Drawing.Size(320, 23);
             this.cmbCourse.TabIndex = 8;
+            this.cmbCourse.SelectedIndexChanged += new System.EventHandler(this.CmbCourse_SelectedIndexChanged);
             // 
             // lblUnits
             // 

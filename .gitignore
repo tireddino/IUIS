@@ -6,26 +6,26 @@
 [Rr]eleases/
 x64/
 x86/
-[Dd]epends/
-[Mm]erge/[Dd]ependencies/
-[Ii]ntermediate/
+build/
+bld/
 [Bb]in/
 [Oo]bj/
 
-# User-specific files
+# Visual Studio files
 *.user
 *.userosscache
 *.suo
-*.userprefs
-*.cache
-*.VC.db
-*.VC.VC.opendb
-
-# IDE settings
+*.csproj.user
+*.vbproj.user
+*.vcxproj.user
 .vs/
-.idea/
-*.swp
-*.swo
+.vscode/
+
+# Compiled binaries
+*.exe
+*.dll
+*.so
+*.dylib
 
 # Logs
 *.log
@@ -38,70 +38,20 @@ x86/
 # OS generated files
 .DS_Store
 Thumbs.db
-ehthumbs.db
-Icon?
 desktop.ini
 
-# Testing
-[Testt]estresults/
-[Tt]emporary[Tt]est[Ff]olders/
-
-# NuGet Packages
+# Packages
 *.nupkg
-[Nn]uget[Rr]estore/[Ll]og/
-[Nn]uget[Rr]estore/[Pp]ackages/
-[Pp]ackages/
+*.snupkg
+packages/
+.nuget/
+project.lock.json
 
-# Visual Studio Code
-.vscode/
+# Test results
+testresults/
+*.trx
 
-# Compiled and build artifacts specific to C#
-*.obj
-*.exe
-*.dll
-*.pdb
-*.ilk
-*.iobj
-*.ipdb
-*.lib
-*.exp
-*.aps
-*.ncb
-*.opt
-*.plg
-*.tlb
-*.tli
-*.tlh
+# Temporary files
 *.tmp
-*.rsp
-*.pgc
-*.pgd
-*.metagen
-*.vcproj.*
-*.user
-*.sbr
-*.res
-*.dat
-*.zip
-*.tar
-*.gz
-*.tgz
-*.bz2
-*.xz
-*.7z
-*.rar
-*.zst
-*.lz4
-*.lzh
-*.cab
-*.arj
-*.rpm
-*.deb
-*.Z
-*.lz
-*.lzo
-*.tar.gz
-*.tar.bz2
-*.tar.xz
-*.tar.zst
+*.temp
 ```
