@@ -262,6 +262,7 @@ namespace IUIS.Forms.Enrollment
             this.cmbAcadYear.Name = "cmbAcadYear";
             this.cmbAcadYear.Size = new System.Drawing.Size(200, 23);
             this.cmbAcadYear.TabIndex = 1;
+            this.cmbAcadYear.SelectedIndexChanged += new System.EventHandler(this.cmbAcadYear_SelectedIndexChanged);
             // 
             // lblAcadYear
             // 
