@@ -110,9 +110,6 @@ namespace IUIS.Models
     /// </summary>
     public class Subject : BaseEntity
     {
-        [JsonPropertyName("code")]
-        public string Code { get; set; } = string.Empty;
-
         [JsonPropertyName("subjectCode")]
         public string SubjectCode { get; set; } = string.Empty;
 
@@ -141,7 +138,7 @@ namespace IUIS.Models
         public string CourseCode { get; set; } = string.Empty;
 
         [JsonIgnore]
-        public string DisplayName => $"{Code} - {SubjectName}";
+        public string DisplayName => $"{SubjectCode} - {SubjectName}";
     }
 
     /// <summary>
