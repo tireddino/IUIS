@@ -270,7 +270,7 @@ namespace IUIS.Utilities
         public List<Subject> GetByCourse(string courseId)
         {
             var subjects = GetAll();
-            return subjects.Where(s => s.CourseId == courseId && s.IsActive).ToList();
+            return subjects.Where(s => s.CourseCode == courseId && s.IsActive).ToList();
         }
 
         public List<Subject> GetByYearLevel(int yearLevel)
