@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using IUIS.Models;
 using IUIS.Utilities;
+using EnrollmentModel = IUIS.Models.Enrollment;
 
 namespace IUIS.Forms.Enrollment
 {
@@ -281,7 +282,7 @@ namespace IUIS.Forms.Enrollment
             ClearSelections();
         }
 
-        private void LoadExistingEnrollment(Enrollment enrollment)
+        private void LoadExistingEnrollment(EnrollmentModel enrollment)
         {
             MessageBox.Show($"Loading existing enrollment for {GetSelectedTerm()}", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -317,7 +318,7 @@ namespace IUIS.Forms.Enrollment
             {
                 string term = GetSelectedTerm();
                 
-                var enrollment = new Enrollment
+                var enrollment = new EnrollmentModel
                 {
                     Id = Guid.NewGuid().ToString(),
                     EnrollmentId = Guid.NewGuid().ToString(),
