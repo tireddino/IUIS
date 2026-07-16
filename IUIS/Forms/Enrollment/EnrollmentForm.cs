@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+#nullable enable
 using IUIS.Models;
 using IUIS.Utilities;
 using EnrollmentModel = IUIS.Models.Enrollment;
@@ -219,11 +220,11 @@ namespace IUIS.Forms.Enrollment
             {
                 // Course Filter: Match if subject has no course (general) OR matches student's course
                 bool courseMatch = string.IsNullOrEmpty(s.CourseCode) || 
-                                   s.CourseCode.Equals(studentCourseCode, StringComparison.OrdinalIgnoreCase);
+                                   string.Equals(s.CourseCode, studentCourseCode, StringComparison.OrdinalIgnoreCase);
 
                 // Year Level Filter: Match if subject has no year (general) OR matches selected year
                 bool yearMatch = s.YearLevel == 0 || 
-                                 s.YearLevel.ToString().Equals(_selectedStudent.YearLevel, StringComparison.OrdinalIgnoreCase);
+                                 string.Equals(s.YearLevel.ToString(), _selectedStudent.YearLevel.ToString(), StringComparison.OrdinalIgnoreCase);
 
                 // Semester Filter: Match if subject has no semester (general) OR matches selected semester
                 bool semesterMatch = !selectedSemesterNum.HasValue || 
