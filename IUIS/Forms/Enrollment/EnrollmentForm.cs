@@ -121,7 +121,7 @@ namespace IUIS.Forms.Enrollment
         {
             DataGridViewTextBoxColumn colCode = new DataGridViewTextBoxColumn();
             colCode.HeaderText = "Code";
-            colCode.DataPropertyName = "Code";
+            colCode.DataPropertyName = "SubjectCode";
             colCode.Width = 80;
 
             DataGridViewTextBoxColumn colDesc = new DataGridViewTextBoxColumn();
