@@ -1,57 +1,67 @@
-```csharp
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-build/
-bld/
-[Bb]in/
-[Oo]bj/
-
-# Visual Studio files
-*.user
-*.userosscache
-*.suo
-*.csproj.user
-*.vbproj.user
-*.vcxproj.user
-.vs/
-.vscode/
-
-# Compiled binaries
+# Compiled and build artifacts
+*.o
+*.obj
 *.exe
 *.dll
 *.so
-*.dylib
+*.a
+*.out
 
-# Logs
+# Dependencies
+node_modules/
+venv/
+.venv/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+target/
+.gradle/
+
+# Logs and temp files
 *.log
+*.tmp
+*.swp
 
 # Environment
 .env
 .env.local
 *.env.*
 
-# OS generated files
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
 .DS_Store
 Thumbs.db
-desktop.ini
 
-# Packages
-*.nupkg
-*.snupkg
-packages/
-.nuget/
-project.lock.json
+# Coverage
+coverage/
+htmlcov/
+.coverage
 
-# Test results
-testresults/
-*.trx
-
-# Temporary files
-*.tmp
-*.temp
-```
+# Archives
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
