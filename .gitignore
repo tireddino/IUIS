@@ -18,7 +18,7 @@ __pycache__/
 target/
 .gradle/
 
-# IDE files
+# Editors/IDEs
 .vscode/
 .idea/
 *.swp
