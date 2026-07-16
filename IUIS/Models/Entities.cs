@@ -111,10 +111,10 @@ namespace IUIS.Models
     public class Subject : BaseEntity
     {
         [JsonPropertyName("subjectCode")]
-        public string SubjectCode { get; set; } = string.Empty;
+        public string Code { get; set; } = string.Empty;
 
         [JsonPropertyName("code")]
-        public string Code { get; set; } = string.Empty;
+        public string SubjectCode { get; set; } = string.Empty;
 
         [JsonPropertyName("subjectName")]
         public string SubjectName { get; set; } = string.Empty;
