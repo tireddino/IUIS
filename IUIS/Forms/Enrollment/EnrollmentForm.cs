@@ -144,7 +144,12 @@ namespace IUIS.Forms.Enrollment
             {
                 _selectedStudent = (Student)cmbStudents.SelectedItem;
                 LoadStudentDetails();
-                LoadAvailableSubjects();
+                
+                // Only load subjects if semester is also selected
+                if (!string.IsNullOrEmpty(cmbSemester.Text))
+                {
+                    LoadAvailableSubjects();
+                }
             }
             else
             {
@@ -391,6 +396,29 @@ namespace IUIS.Forms.Enrollment
                 lblStatus.Text = "PENDING PAYMENT";
                 lblStatus.ForeColor = Color.OrangeRed;
             }
+
+            // Populate and show the enrollment status grid
+            dgvEnrollmentHistory.Rows.Clear();
+            foreach (var subject in enrollment.Subjects ?? new List<Subject>())
+            {
+                dgvEnrollmentHistory.Rows.Add(
+                    subject.SubjectCode,
+                    subject.Description,
+                    subject.Units,
+                    (subject.Units * 1500).ToString("C2")
+                );
+            }
+
+            // Add summary rows
+            dgvEnrollmentHistory.Rows.Add("", "TOTAL UNITS:", enrollment.TotalUnits, "");
+            dgvEnrollmentHistory.Rows.Add("", "TUITION FEE:", "", enrollment.TuitionFee.ToString("C2"));
+            dgvEnrollmentHistory.Rows.Add("", "MISCELLANEOUS:", "", enrollment.MiscellaneousFee.ToString("C2"));
+            dgvEnrollmentHistory.Rows.Add("", "TOTAL ASSESSMENT:", "", enrollment.TotalAssessment.ToString("C2"));
+            dgvEnrollmentHistory.Rows.Add("", "AMOUNT PAID:", "", enrollment.AmountPaid.ToString("C2"));
+            dgvEnrollmentHistory.Rows.Add("", "BALANCE:", "", enrollment.Balance.ToString("C2"));
+            dgvEnrollmentHistory.Rows.Add("", "STATUS:", "", enrollment.Balance <= 0 ? "FULLY ENROLLED" : "PENDING PAYMENT");
+
+            grpEnrollmentHistory.Visible = true;
         }
 
         private void ClearSelections()
@@ -478,6 +506,8 @@ namespace IUIS.Forms.Enrollment
             lblStudName.Text = "---";
             lblStudCourse.Text = "---";
             lblStudYear.Text = "---";
+            grpEnrollmentHistory.Visible = false;
+            dgvEnrollmentHistory.Rows.Clear();
         }
 
         private void btnPrintAssessment_Click(object sender, EventArgs e)

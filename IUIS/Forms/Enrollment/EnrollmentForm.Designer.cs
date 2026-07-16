@@ -4,15 +4,6 @@ namespace IUIS.Forms.Enrollment
     {
         private System.ComponentModel.IContainer components = null;
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
         #region Windows Form Designer generated code
 
         private void InitializeComponent()
@@ -600,12 +591,43 @@ namespace IUIS.Forms.Enrollment
             this.btnPrintAssessment.UseVisualStyleBackColor = false;
             this.btnPrintAssessment.Click += new System.EventHandler(this.btnPrintAssessment_Click);
             // 
+            // grpEnrollmentHistory
+            // 
+            this.grpEnrollmentHistory.Controls.Add(this.dgvEnrollmentHistory);
+            this.grpEnrollmentHistory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.grpEnrollmentHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.grpEnrollmentHistory.Location = new System.Drawing.Point(20, 280);
+            this.grpEnrollmentHistory.Name = "grpEnrollmentHistory";
+            this.grpEnrollmentHistory.Size = new System.Drawing.Size(1040, 280);
+            this.grpEnrollmentHistory.TabIndex = 8;
+            this.grpEnrollmentHistory.TabStop = false;
+            this.grpEnrollmentHistory.Text = "Existing Enrollment Status";
+            this.grpEnrollmentHistory.Visible = false;
+            // 
+            // dgvEnrollmentHistory
+            // 
+            this.dgvEnrollmentHistory.AllowUserToAddRows = false;
+            this.dgvEnrollmentHistory.AllowUserToDeleteRows = false;
+            this.dgvEnrollmentHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEnrollmentHistory.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEnrollmentHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEnrollmentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEnrollmentHistory.Location = new System.Drawing.Point(20, 30);
+            this.dgvEnrollmentHistory.MultiSelect = false;
+            this.dgvEnrollmentHistory.Name = "dgvEnrollmentHistory";
+            this.dgvEnrollmentHistory.ReadOnly = true;
+            this.dgvEnrollmentHistory.RowHeadersVisible = false;
+            this.dgvEnrollmentHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEnrollmentHistory.Size = new System.Drawing.Size(1000, 230);
+            this.dgvEnrollmentHistory.TabIndex = 0;
+            // 
             // EnrollmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(1084, 720);
+            this.Controls.Add(this.grpEnrollmentHistory);
             this.Controls.Add(this.lblStudYear);
             this.Controls.Add(this.btnPrintAssessment);
             this.Controls.Add(this.btnCancel);
@@ -631,6 +653,8 @@ namespace IUIS.Forms.Enrollment
             ((System.ComponentModel.ISupportInitialize)(this.dgvSelectedSubjects)).EndInit();
             this.grpFees.ResumeLayout(false);
             this.grpFees.PerformLayout();
+            this.grpEnrollmentHistory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollmentHistory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
