@@ -3,89 +3,37 @@
 *.obj
 *.exe
 *.dll
-*.so
-*.a
-*.lib
 *.pdb
+*.user
+*.suo
+*.cache
 *.ilk
 *.exp
+*.lib
 *.iobj
 *.ipdb
 *.tlog
-*.lastbuildstate
+*.log
+*.tmp
 
-# Visual Studio/Visual Studio Code files
+# Visual Studio/MSBuild
+**/[Dd]ebug/
+**/[Rr]elease/
+**/[Dd]ebugPublic/
+**/[Rr]eleasesymbols/
+x64/
+x86/
+build/
+bld/
+bin/
+obj/
+TestResults/
+
+# IDE
 .vs/
-.vscode/
-*.user
-*.userosscache
-*.suo
-*.csproj.user
-*.vbproj.user
 *.userprefs
 
-# Temporary files
-*.tmp
-*.temp
-*.cache
-*.log
-
-# OS generated files
+# OS
 .DS_Store
 Thumbs.db
-ehthumbs.db
-Icon?
-._*
-
-# Compiled source
-*.nib
-*.plist
-*.pch
-*.gch
-*.gcda
-*.gcno
-*.gcov
-*.lo
-
-# Dependencies
-node_modules/
-vendor/bundle/
-julia-*/
-zig*/
-
-# Distribution / packaging
-.Python
-env/
-venv/
-.venv/
-pip-log.txt
-pip-delete-this-directory.txt
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.log
-.gitattributes
-.project
-.pydevproject
-*.swp
-*.swo
-*~
-.DS_Store
-Thumbs.db
-
-# Testing
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.log
 ```
