@@ -157,7 +157,16 @@ namespace IUIS.Forms.Enrollment
 
             lblStudId.Text = _selectedStudent.StudentId;
             lblStudName.Text = _selectedStudent.FullName;
-            lblStudCourse.Text = _selectedStudent.Course;
+            
+            // Get course name from CourseId if Course is empty
+            string courseName = _selectedStudent.Course;
+            if (string.IsNullOrEmpty(courseName) && !string.IsNullOrEmpty(_selectedStudent.CourseId))
+            {
+                var course = _courseRepo.GetByCourseCode(_selectedStudent.CourseId);
+                courseName = course?.CourseName ?? _selectedStudent.CourseId;
+            }
+            lblStudCourse.Text = courseName;
+            
             lblStudYear.Text = _selectedStudent.YearLevel.ToString();
             
             // Check existing enrollment for current term
