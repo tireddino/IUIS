@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using IUIS.Models;
 using IUIS.Forms.Login;
+using IUIS.Forms.Enrollment;
 
 namespace IUIS.Forms.Dashboard
 {
@@ -142,7 +143,7 @@ namespace IUIS.Forms.Dashboard
 
         private void BtnEnrollment_Click(object sender, EventArgs e)
         {
-            var form = new Enrollment.EnrollmentForm();
+            var form = new EnrollmentForm();
             OpenChildForm(form, sender);
         }
 

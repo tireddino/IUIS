@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using IUIS.Models;
+using EnrollmentModel = IUIS.Models.Enrollment;
 
 namespace IUIS.Utilities
 {
@@ -279,27 +280,27 @@ namespace IUIS.Utilities
         }
     }
 
-    public class EnrollmentRepository : JsonRepository<Enrollment>
+    public class EnrollmentRepository : JsonRepository<EnrollmentModel>
     {
         public EnrollmentRepository() : base("enrollments.json") { }
 
-        public List<Enrollment> GetByStudent(string studentId)
+        public List<EnrollmentModel> GetByStudent(string studentId)
         {
             var enrollments = GetAll();
             return enrollments.Where(e => e.StudentId == studentId && e.IsActive).ToList();
         }
 
-        public Enrollment? GetCurrentEnrollment(string studentId, string academicYear, int semester)
+        public EnrollmentModel? GetCurrentEnrollment(string studentId, string academicYear, int semester)
         {
             var enrollments = GetAll();
             return enrollments.FirstOrDefault(e => 
                 e.StudentId == studentId && 
                 e.AcademicYear == academicYear && 
-                e.Semester == semester && 
+                e.Semester == semester.ToString() && 
                 e.IsActive);
         }
 
-        public Enrollment? GetByStudentAndTerm(string studentId, string term)
+        public EnrollmentModel? GetByStudentAndTerm(string studentId, string term)
         {
             var enrollments = GetAll();
             return enrollments.FirstOrDefault(e =>
