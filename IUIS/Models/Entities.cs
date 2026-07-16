@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace IUIS.Models
@@ -28,9 +29,6 @@ namespace IUIS.Models
     {
         [JsonPropertyName("studentId")]
         public string StudentId { get; set; } = string.Empty;
-
-        [JsonPropertyName("id")]
-        public string Id { get; set; } = string.Empty;
 
         [JsonPropertyName("firstName")]
         public string FirstName { get; set; } = string.Empty;
