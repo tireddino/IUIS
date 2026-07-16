@@ -603,7 +603,7 @@ namespace IUIS.Forms.Enrollment
             this.grpEnrollmentHistory.TabIndex = 8;
             this.grpEnrollmentHistory.TabStop = false;
             this.grpEnrollmentHistory.Text = "Existing Enrollment Status";
-            this.grpEnrollmentHistory.Visible = false;
+            this.grpEnrollmentHistory.Visible = true;
             // 
             // dgvEnrollmentHistory
             // 
