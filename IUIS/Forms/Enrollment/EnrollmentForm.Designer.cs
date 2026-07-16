@@ -60,6 +60,7 @@ namespace IUIS.Forms.Enrollment
             this.btnEnroll = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPrintAssessment = new System.Windows.Forms.Button();
+            this.pnlTop.SuspendLayout();
             this.grpStudentInfo.SuspendLayout();
             this.grpEnrollmentDetails.SuspendLayout();
             this.grpSubjectSelection.SuspendLayout();
@@ -83,96 +84,83 @@ namespace IUIS.Forms.Enrollment
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(20, 15);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(290, 32);
+            this.lblTitle.Size = new System.Drawing.Size(298, 32);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Enrollment Management";
             // 
             // grpStudentInfo
             // 
-            this.grpStudentInfo.Controls.Add(this.lblStudYear);
             this.grpStudentInfo.Controls.Add(this.lblStudCourse);
             this.grpStudentInfo.Controls.Add(this.lblStudName);
             this.grpStudentInfo.Controls.Add(this.lblStudId);
-            this.grpStudentInfo.Controls.Add(this.lblYearLabel);
             this.grpStudentInfo.Controls.Add(this.lblCourseLabel);
             this.grpStudentInfo.Controls.Add(this.lblNameLabel);
             this.grpStudentInfo.Controls.Add(this.lblIdLabel);
             this.grpStudentInfo.Controls.Add(this.cmbStudents);
             this.grpStudentInfo.Controls.Add(this.lblSelectStudent);
             this.grpStudentInfo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.grpStudentInfo.ForeColor = System.Drawing.Color.FromArgb(0, 51, 102);
+            this.grpStudentInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.grpStudentInfo.Location = new System.Drawing.Point(20, 80);
             this.grpStudentInfo.Name = "grpStudentInfo";
-            this.grpStudentInfo.Size = new System.Drawing.Size(500, 180);
+            this.grpStudentInfo.Size = new System.Drawing.Size(500, 194);
             this.grpStudentInfo.TabIndex = 1;
             this.grpStudentInfo.TabStop = false;
             this.grpStudentInfo.Text = "Student Information";
             // 
-            // lblSelectStudent
+            // lblStudYear
             // 
-            this.lblSelectStudent.AutoSize = true;
-            this.lblSelectStudent.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblSelectStudent.ForeColor = System.Drawing.Color.Black;
-            this.lblSelectStudent.Location = new System.Drawing.Point(20, 30);
-            this.lblSelectStudent.Name = "lblSelectStudent";
-            this.lblSelectStudent.Size = new System.Drawing.Size(95, 15);
-            this.lblSelectStudent.TabIndex = 0;
-            this.lblSelectStudent.Text = "Select Student:";
+            this.lblStudYear.AutoSize = true;
+            this.lblStudYear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblStudYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblStudYear.Location = new System.Drawing.Point(120, 245);
+            this.lblStudYear.Name = "lblStudYear";
+            this.lblStudYear.Size = new System.Drawing.Size(22, 15);
+            this.lblStudYear.TabIndex = 9;
+            this.lblStudYear.Text = "---";
             // 
-            // cmbStudents
+            // lblStudCourse
             // 
-            this.cmbStudents.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStudents.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.cmbStudents.FormattingEnabled = true;
-            this.cmbStudents.Location = new System.Drawing.Point(20, 50);
-            this.cmbStudents.Name = "cmbStudents";
-            this.cmbStudents.Size = new System.Drawing.Size(460, 23);
-            this.cmbStudents.TabIndex = 1;
-            this.cmbStudents.SelectedIndexChanged += new System.EventHandler(this.cmbStudents_SelectedIndexChanged);
-            // 
-            // lblIdLabel
-            // 
-            this.lblIdLabel.AutoSize = true;
-            this.lblIdLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblIdLabel.ForeColor = System.Drawing.Color.Black;
-            this.lblIdLabel.Location = new System.Drawing.Point(20, 90);
-            this.lblIdLabel.Name = "lblIdLabel";
-            this.lblIdLabel.Size = new System.Drawing.Size(65, 15);
-            this.lblIdLabel.TabIndex = 2;
-            this.lblIdLabel.Text = "Student ID:";
-            // 
-            // lblStudId
-            // 
-            this.lblStudId.AutoSize = true;
-            this.lblStudId.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblStudId.ForeColor = System.Drawing.Color.FromArgb(0, 51, 102);
-            this.lblStudId.Location = new System.Drawing.Point(100, 90);
-            this.lblStudId.Name = "lblStudId";
-            this.lblStudId.Size = new System.Drawing.Size(35, 15);
-            this.lblStudId.TabIndex = 3;
-            this.lblStudId.Text = "---";
-            // 
-            // lblNameLabel
-            // 
-            this.lblNameLabel.AutoSize = true;
-            this.lblNameLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblNameLabel.ForeColor = System.Drawing.Color.Black;
-            this.lblNameLabel.Location = new System.Drawing.Point(20, 115);
-            this.lblNameLabel.Name = "lblNameLabel";
-            this.lblNameLabel.Size = new System.Drawing.Size(42, 15);
-            this.lblNameLabel.TabIndex = 4;
-            this.lblNameLabel.Text = "Name:";
+            this.lblStudCourse.AutoSize = true;
+            this.lblStudCourse.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblStudCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblStudCourse.Location = new System.Drawing.Point(100, 140);
+            this.lblStudCourse.Name = "lblStudCourse";
+            this.lblStudCourse.Size = new System.Drawing.Size(22, 15);
+            this.lblStudCourse.TabIndex = 7;
+            this.lblStudCourse.Text = "---";
             // 
             // lblStudName
             // 
             this.lblStudName.AutoSize = true;
             this.lblStudName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblStudName.ForeColor = System.Drawing.Color.FromArgb(0, 51, 102);
+            this.lblStudName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.lblStudName.Location = new System.Drawing.Point(100, 115);
             this.lblStudName.Name = "lblStudName";
-            this.lblStudName.Size = new System.Drawing.Size(35, 15);
+            this.lblStudName.Size = new System.Drawing.Size(22, 15);
             this.lblStudName.TabIndex = 5;
             this.lblStudName.Text = "---";
+            // 
+            // lblStudId
+            // 
+            this.lblStudId.AutoSize = true;
+            this.lblStudId.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblStudId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblStudId.Location = new System.Drawing.Point(100, 90);
+            this.lblStudId.Name = "lblStudId";
+            this.lblStudId.Size = new System.Drawing.Size(22, 15);
+            this.lblStudId.TabIndex = 3;
+            this.lblStudId.Text = "---";
+            // 
+            // lblYearLabel
+            // 
+            this.lblYearLabel.AutoSize = true;
+            this.lblYearLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblYearLabel.ForeColor = System.Drawing.Color.Black;
+            this.lblYearLabel.Location = new System.Drawing.Point(40, 245);
+            this.lblYearLabel.Name = "lblYearLabel";
+            this.lblYearLabel.Size = new System.Drawing.Size(62, 15);
+            this.lblYearLabel.TabIndex = 8;
+            this.lblYearLabel.Text = "Year Level:";
             // 
             // lblCourseLabel
             // 
@@ -185,38 +173,49 @@ namespace IUIS.Forms.Enrollment
             this.lblCourseLabel.TabIndex = 6;
             this.lblCourseLabel.Text = "Course:";
             // 
-            // lblStudCourse
+            // lblNameLabel
             // 
-            this.lblStudCourse.AutoSize = true;
-            this.lblStudCourse.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblStudCourse.ForeColor = System.Drawing.Color.FromArgb(0, 51, 102);
-            this.lblStudCourse.Location = new System.Drawing.Point(100, 140);
-            this.lblStudCourse.Name = "lblStudCourse";
-            this.lblStudCourse.Size = new System.Drawing.Size(35, 15);
-            this.lblStudCourse.TabIndex = 7;
-            this.lblStudCourse.Text = "---";
+            this.lblNameLabel.AutoSize = true;
+            this.lblNameLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblNameLabel.ForeColor = System.Drawing.Color.Black;
+            this.lblNameLabel.Location = new System.Drawing.Point(20, 115);
+            this.lblNameLabel.Name = "lblNameLabel";
+            this.lblNameLabel.Size = new System.Drawing.Size(42, 15);
+            this.lblNameLabel.TabIndex = 4;
+            this.lblNameLabel.Text = "Name:";
             // 
-            // lblYearLabel
+            // lblIdLabel
             // 
-            this.lblYearLabel.AutoSize = true;
-            this.lblYearLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblYearLabel.ForeColor = System.Drawing.Color.Black;
-            this.lblYearLabel.Location = new System.Drawing.Point(280, 140);
-            this.lblYearLabel.Name = "lblYearLabel";
-            this.lblYearLabel.Size = new System.Drawing.Size(68, 15);
-            this.lblYearLabel.TabIndex = 8;
-            this.lblYearLabel.Text = "Year Level:";
+            this.lblIdLabel.AutoSize = true;
+            this.lblIdLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblIdLabel.ForeColor = System.Drawing.Color.Black;
+            this.lblIdLabel.Location = new System.Drawing.Point(20, 90);
+            this.lblIdLabel.Name = "lblIdLabel";
+            this.lblIdLabel.Size = new System.Drawing.Size(65, 15);
+            this.lblIdLabel.TabIndex = 2;
+            this.lblIdLabel.Text = "Student ID:";
             // 
-            // lblStudYear
+            // cmbStudents
             // 
-            this.lblStudYear.AutoSize = true;
-            this.lblStudYear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblStudYear.ForeColor = System.Drawing.Color.FromArgb(0, 51, 102);
-            this.lblStudYear.Location = new System.Drawing.Point(360, 140);
-            this.lblStudYear.Name = "lblStudYear";
-            this.lblStudYear.Size = new System.Drawing.Size(35, 15);
-            this.lblStudYear.TabIndex = 9;
-            this.lblStudYear.Text = "---";
+            this.cmbStudents.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStudents.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbStudents.FormattingEnabled = true;
+            this.cmbStudents.Location = new System.Drawing.Point(20, 50);
+            this.cmbStudents.Name = "cmbStudents";
+            this.cmbStudents.Size = new System.Drawing.Size(460, 23);
+            this.cmbStudents.TabIndex = 1;
+            this.cmbStudents.SelectedIndexChanged += new System.EventHandler(this.cmbStudents_SelectedIndexChanged);
+            // 
+            // lblSelectStudent
+            // 
+            this.lblSelectStudent.AutoSize = true;
+            this.lblSelectStudent.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblSelectStudent.ForeColor = System.Drawing.Color.Black;
+            this.lblSelectStudent.Location = new System.Drawing.Point(20, 30);
+            this.lblSelectStudent.Name = "lblSelectStudent";
+            this.lblSelectStudent.Size = new System.Drawing.Size(85, 15);
+            this.lblSelectStudent.TabIndex = 0;
+            this.lblSelectStudent.Text = "Select Student:";
             // 
             // grpEnrollmentDetails
             // 
@@ -225,45 +224,13 @@ namespace IUIS.Forms.Enrollment
             this.grpEnrollmentDetails.Controls.Add(this.cmbAcadYear);
             this.grpEnrollmentDetails.Controls.Add(this.lblAcadYear);
             this.grpEnrollmentDetails.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.grpEnrollmentDetails.ForeColor = System.Drawing.Color.FromArgb(0, 51, 102);
+            this.grpEnrollmentDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.grpEnrollmentDetails.Location = new System.Drawing.Point(540, 80);
             this.grpEnrollmentDetails.Name = "grpEnrollmentDetails";
             this.grpEnrollmentDetails.Size = new System.Drawing.Size(520, 180);
             this.grpEnrollmentDetails.TabIndex = 2;
             this.grpEnrollmentDetails.TabStop = false;
             this.grpEnrollmentDetails.Text = "Enrollment Details";
-            // 
-            // lblAcadYear
-            // 
-            this.lblAcadYear.AutoSize = true;
-            this.lblAcadYear.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblAcadYear.ForeColor = System.Drawing.Color.Black;
-            this.lblAcadYear.Location = new System.Drawing.Point(20, 50);
-            this.lblAcadYear.Name = "lblAcadYear";
-            this.lblAcadYear.Size = new System.Drawing.Size(95, 15);
-            this.lblAcadYear.TabIndex = 0;
-            this.lblAcadYear.Text = "Academic Year:";
-            // 
-            // cmbAcadYear
-            // 
-            this.cmbAcadYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbAcadYear.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.cmbAcadYear.FormattingEnabled = true;
-            this.cmbAcadYear.Location = new System.Drawing.Point(20, 70);
-            this.cmbAcadYear.Name = "cmbAcadYear";
-            this.cmbAcadYear.Size = new System.Drawing.Size(200, 23);
-            this.cmbAcadYear.TabIndex = 1;
-            // 
-            // lblSemester
-            // 
-            this.lblSemester.AutoSize = true;
-            this.lblSemester.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblSemester.ForeColor = System.Drawing.Color.Black;
-            this.lblSemester.Location = new System.Drawing.Point(280, 50);
-            this.lblSemester.Name = "lblSemester";
-            this.lblSemester.Size = new System.Drawing.Size(60, 15);
-            this.lblSemester.TabIndex = 2;
-            this.lblSemester.Text = "Semester:";
             // 
             // cmbSemester
             // 
@@ -280,6 +247,38 @@ namespace IUIS.Forms.Enrollment
             this.cmbSemester.TabIndex = 3;
             this.cmbSemester.SelectedIndexChanged += new System.EventHandler(this.cmbSemester_SelectedIndexChanged);
             // 
+            // lblSemester
+            // 
+            this.lblSemester.AutoSize = true;
+            this.lblSemester.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblSemester.ForeColor = System.Drawing.Color.Black;
+            this.lblSemester.Location = new System.Drawing.Point(280, 50);
+            this.lblSemester.Name = "lblSemester";
+            this.lblSemester.Size = new System.Drawing.Size(58, 15);
+            this.lblSemester.TabIndex = 2;
+            this.lblSemester.Text = "Semester:";
+            // 
+            // cmbAcadYear
+            // 
+            this.cmbAcadYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAcadYear.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbAcadYear.FormattingEnabled = true;
+            this.cmbAcadYear.Location = new System.Drawing.Point(20, 70);
+            this.cmbAcadYear.Name = "cmbAcadYear";
+            this.cmbAcadYear.Size = new System.Drawing.Size(200, 23);
+            this.cmbAcadYear.TabIndex = 1;
+            // 
+            // lblAcadYear
+            // 
+            this.lblAcadYear.AutoSize = true;
+            this.lblAcadYear.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblAcadYear.ForeColor = System.Drawing.Color.Black;
+            this.lblAcadYear.Location = new System.Drawing.Point(20, 50);
+            this.lblAcadYear.Name = "lblAcadYear";
+            this.lblAcadYear.Size = new System.Drawing.Size(88, 15);
+            this.lblAcadYear.TabIndex = 0;
+            this.lblAcadYear.Text = "Academic Year:";
+            // 
             // grpSubjectSelection
             // 
             this.grpSubjectSelection.Controls.Add(this.btnRemoveSubject);
@@ -289,7 +288,7 @@ namespace IUIS.Forms.Enrollment
             this.grpSubjectSelection.Controls.Add(this.dgvSelectedSubjects);
             this.grpSubjectSelection.Controls.Add(this.lblSelectedSubjects);
             this.grpSubjectSelection.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.grpSubjectSelection.ForeColor = System.Drawing.Color.FromArgb(0, 51, 102);
+            this.grpSubjectSelection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.grpSubjectSelection.Location = new System.Drawing.Point(20, 280);
             this.grpSubjectSelection.Name = "grpSubjectSelection";
             this.grpSubjectSelection.Size = new System.Drawing.Size(1040, 250);
@@ -297,16 +296,56 @@ namespace IUIS.Forms.Enrollment
             this.grpSubjectSelection.TabStop = false;
             this.grpSubjectSelection.Text = "Subject Selection";
             // 
-            // lblSelectedSubjects
+            // btnRemoveSubject
             // 
-            this.lblSelectedSubjects.AutoSize = true;
-            this.lblSelectedSubjects.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblSelectedSubjects.ForeColor = System.Drawing.Color.Black;
-            this.lblSelectedSubjects.Location = new System.Drawing.Point(520, 30);
-            this.lblSelectedSubjects.Name = "lblSelectedSubjects";
-            this.lblSelectedSubjects.Size = new System.Drawing.Size(115, 15);
-            this.lblSelectedSubjects.TabIndex = 0;
-            this.lblSelectedSubjects.Text = "Selected Subjects:";
+            this.btnRemoveSubject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnRemoveSubject.FlatAppearance.BorderSize = 0;
+            this.btnRemoveSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveSubject.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnRemoveSubject.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveSubject.Location = new System.Drawing.Point(410, 120);
+            this.btnRemoveSubject.Name = "btnRemoveSubject";
+            this.btnRemoveSubject.Size = new System.Drawing.Size(90, 30);
+            this.btnRemoveSubject.TabIndex = 5;
+            this.btnRemoveSubject.Text = "<< Remove";
+            this.btnRemoveSubject.UseVisualStyleBackColor = false;
+            this.btnRemoveSubject.Click += new System.EventHandler(this.btnRemoveSubject_Click);
+            // 
+            // btnAddSubject
+            // 
+            this.btnAddSubject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.btnAddSubject.FlatAppearance.BorderSize = 0;
+            this.btnAddSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddSubject.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAddSubject.ForeColor = System.Drawing.Color.White;
+            this.btnAddSubject.Location = new System.Drawing.Point(410, 80);
+            this.btnAddSubject.Name = "btnAddSubject";
+            this.btnAddSubject.Size = new System.Drawing.Size(90, 30);
+            this.btnAddSubject.TabIndex = 4;
+            this.btnAddSubject.Text = "Add >>";
+            this.btnAddSubject.UseVisualStyleBackColor = false;
+            this.btnAddSubject.Click += new System.EventHandler(this.btnAddSubject_Click);
+            // 
+            // cmbSubjectList
+            // 
+            this.cmbSubjectList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSubjectList.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cmbSubjectList.FormattingEnabled = true;
+            this.cmbSubjectList.Location = new System.Drawing.Point(20, 50);
+            this.cmbSubjectList.Name = "cmbSubjectList";
+            this.cmbSubjectList.Size = new System.Drawing.Size(380, 23);
+            this.cmbSubjectList.TabIndex = 3;
+            // 
+            // lblAvailableSubjects
+            // 
+            this.lblAvailableSubjects.AutoSize = true;
+            this.lblAvailableSubjects.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblAvailableSubjects.ForeColor = System.Drawing.Color.Black;
+            this.lblAvailableSubjects.Location = new System.Drawing.Point(20, 30);
+            this.lblAvailableSubjects.Name = "lblAvailableSubjects";
+            this.lblAvailableSubjects.Size = new System.Drawing.Size(105, 15);
+            this.lblAvailableSubjects.TabIndex = 2;
+            this.lblAvailableSubjects.Text = "Available Subjects:";
             // 
             // dgvSelectedSubjects
             // 
@@ -322,56 +361,16 @@ namespace IUIS.Forms.Enrollment
             this.dgvSelectedSubjects.Size = new System.Drawing.Size(500, 140);
             this.dgvSelectedSubjects.TabIndex = 1;
             // 
-            // lblAvailableSubjects
+            // lblSelectedSubjects
             // 
-            this.lblAvailableSubjects.AutoSize = true;
-            this.lblAvailableSubjects.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblAvailableSubjects.ForeColor = System.Drawing.Color.Black;
-            this.lblAvailableSubjects.Location = new System.Drawing.Point(20, 30);
-            this.lblAvailableSubjects.Name = "lblAvailableSubjects";
-            this.lblAvailableSubjects.Size = new System.Drawing.Size(110, 15);
-            this.lblAvailableSubjects.TabIndex = 2;
-            this.lblAvailableSubjects.Text = "Available Subjects:";
-            // 
-            // cmbSubjectList
-            // 
-            this.cmbSubjectList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSubjectList.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.cmbSubjectList.FormattingEnabled = true;
-            this.cmbSubjectList.Location = new System.Drawing.Point(20, 50);
-            this.cmbSubjectList.Name = "cmbSubjectList";
-            this.cmbSubjectList.Size = new System.Drawing.Size(380, 23);
-            this.cmbSubjectList.TabIndex = 3;
-            // 
-            // btnAddSubject
-            // 
-            this.btnAddSubject.BackColor = System.Drawing.Color.FromArgb(0, 102, 204);
-            this.btnAddSubject.FlatAppearance.BorderSize = 0;
-            this.btnAddSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddSubject.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnAddSubject.ForeColor = System.Drawing.Color.White;
-            this.btnAddSubject.Location = new System.Drawing.Point(410, 80);
-            this.btnAddSubject.Name = "btnAddSubject";
-            this.btnAddSubject.Size = new System.Drawing.Size(90, 30);
-            this.btnAddSubject.TabIndex = 4;
-            this.btnAddSubject.Text = "Add >>";
-            this.btnAddSubject.UseVisualStyleBackColor = false;
-            this.btnAddSubject.Click += new System.EventHandler(this.btnAddSubject_Click);
-            // 
-            // btnRemoveSubject
-            // 
-            this.btnRemoveSubject.BackColor = System.Drawing.Color.FromArgb(204, 0, 0);
-            this.btnRemoveSubject.FlatAppearance.BorderSize = 0;
-            this.btnRemoveSubject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveSubject.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnRemoveSubject.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveSubject.Location = new System.Drawing.Point(410, 120);
-            this.btnRemoveSubject.Name = "btnRemoveSubject";
-            this.btnRemoveSubject.Size = new System.Drawing.Size(90, 30);
-            this.btnRemoveSubject.TabIndex = 5;
-            this.btnRemoveSubject.Text = "<< Remove";
-            this.btnRemoveSubject.UseVisualStyleBackColor = false;
-            this.btnRemoveSubject.Click += new System.EventHandler(this.btnRemoveSubject_Click);
+            this.lblSelectedSubjects.AutoSize = true;
+            this.lblSelectedSubjects.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblSelectedSubjects.ForeColor = System.Drawing.Color.Black;
+            this.lblSelectedSubjects.Location = new System.Drawing.Point(520, 30);
+            this.lblSelectedSubjects.Name = "lblSelectedSubjects";
+            this.lblSelectedSubjects.Size = new System.Drawing.Size(101, 15);
+            this.lblSelectedSubjects.TabIndex = 0;
+            this.lblSelectedSubjects.Text = "Selected Subjects:";
             // 
             // grpFees
             // 
@@ -390,7 +389,7 @@ namespace IUIS.Forms.Enrollment
             this.grpFees.Controls.Add(this.lblTuitionLabel);
             this.grpFees.Controls.Add(this.lblUnitsLabel);
             this.grpFees.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.grpFees.ForeColor = System.Drawing.Color.FromArgb(0, 51, 102);
+            this.grpFees.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
             this.grpFees.Location = new System.Drawing.Point(20, 550);
             this.grpFees.Name = "grpFees";
             this.grpFees.Size = new System.Drawing.Size(700, 180);
@@ -398,104 +397,27 @@ namespace IUIS.Forms.Enrollment
             this.grpFees.TabStop = false;
             this.grpFees.Text = "Assessment of Fees";
             // 
-            // lblUnitsLabel
+            // lblBalance
             // 
-            this.lblUnitsLabel.AutoSize = true;
-            this.lblUnitsLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblUnitsLabel.ForeColor = System.Drawing.Color.Black;
-            this.lblUnitsLabel.Location = new System.Drawing.Point(20, 40);
-            this.lblUnitsLabel.Name = "lblUnitsLabel";
-            this.lblUnitsLabel.Size = new System.Drawing.Size(75, 15);
-            this.lblUnitsLabel.TabIndex = 0;
-            this.lblUnitsLabel.Text = "Total Units:";
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblBalance.ForeColor = System.Drawing.Color.Red;
+            this.lblBalance.Location = new System.Drawing.Point(450, 115);
+            this.lblBalance.Name = "lblBalance";
+            this.lblBalance.Size = new System.Drawing.Size(31, 15);
+            this.lblBalance.TabIndex = 13;
+            this.lblBalance.Text = "0.00";
             // 
-            // lblTotalUnits
+            // lblStatus
             // 
-            this.lblTotalUnits.AutoSize = true;
-            this.lblTotalUnits.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblTotalUnits.ForeColor = System.Drawing.Color.FromArgb(0, 51, 102);
-            this.lblTotalUnits.Location = new System.Drawing.Point(150, 40);
-            this.lblTotalUnits.Name = "lblTotalUnits";
-            this.lblTotalUnits.Size = new System.Drawing.Size(22, 15);
-            this.lblTotalUnits.TabIndex = 1;
-            this.lblTotalUnits.Text = "0";
-            // 
-            // lblTuitionLabel
-            // 
-            this.lblTuitionLabel.AutoSize = true;
-            this.lblTuitionLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblTuitionLabel.ForeColor = System.Drawing.Color.Black;
-            this.lblTuitionLabel.Location = new System.Drawing.Point(20, 65);
-            this.lblTuitionLabel.Name = "lblTuitionLabel";
-            this.lblTuitionLabel.Size = new System.Drawing.Size(80, 15);
-            this.lblTuitionLabel.TabIndex = 2;
-            this.lblTuitionLabel.Text = "Tuition Fee:";
-            // 
-            // lblTuitionFee
-            // 
-            this.lblTuitionFee.AutoSize = true;
-            this.lblTuitionFee.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblTuitionFee.ForeColor = System.Drawing.Color.FromArgb(0, 51, 102);
-            this.lblTuitionFee.Location = new System.Drawing.Point(150, 65);
-            this.lblTuitionFee.Name = "lblTuitionFee";
-            this.lblTuitionFee.Size = new System.Drawing.Size(44, 15);
-            this.lblTuitionFee.TabIndex = 3;
-            this.lblTuitionFee.Text = "0.00";
-            // 
-            // lblMiscLabel
-            // 
-            this.lblMiscLabel.AutoSize = true;
-            this.lblMiscLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblMiscLabel.ForeColor = System.Drawing.Color.Black;
-            this.lblMiscLabel.Location = new System.Drawing.Point(20, 90);
-            this.lblMiscLabel.Name = "lblMiscLabel";
-            this.lblMiscLabel.Size = new System.Drawing.Size(115, 15);
-            this.lblMiscLabel.TabIndex = 4;
-            this.lblMiscLabel.Text = "Miscellaneous Fee:";
-            // 
-            // lblMiscFee
-            // 
-            this.lblMiscFee.AutoSize = true;
-            this.lblMiscFee.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblMiscFee.ForeColor = System.Drawing.Color.FromArgb(0, 51, 102);
-            this.lblMiscFee.Location = new System.Drawing.Point(150, 90);
-            this.lblMiscFee.Name = "lblMiscFee";
-            this.lblMiscFee.Size = new System.Drawing.Size(44, 15);
-            this.lblMiscFee.TabIndex = 5;
-            this.lblMiscFee.Text = "0.00";
-            // 
-            // lblTotalLabel
-            // 
-            this.lblTotalLabel.AutoSize = true;
-            this.lblTotalLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblTotalLabel.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalLabel.Location = new System.Drawing.Point(20, 115);
-            this.lblTotalLabel.Name = "lblTotalLabel";
-            this.lblTotalLabel.Size = new System.Drawing.Size(120, 15);
-            this.lblTotalLabel.TabIndex = 6;
-            this.lblTotalLabel.Text = "Total Assessment:";
-            // 
-            // lblTotalAssessment
-            // 
-            this.lblTotalAssessment.AutoSize = true;
-            this.lblTotalAssessment.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblTotalAssessment.ForeColor = System.Drawing.Color.FromArgb(0, 153, 76);
-            this.lblTotalAssessment.Location = new System.Drawing.Point(150, 115);
-            this.lblTotalAssessment.Name = "lblTotalAssessment";
-            this.lblTotalAssessment.Size = new System.Drawing.Size(44, 15);
-            this.lblTotalAssessment.TabIndex = 7;
-            this.lblTotalAssessment.Text = "0.00";
-            // 
-            // lblAmountPaidLabel
-            // 
-            this.lblAmountPaidLabel.AutoSize = true;
-            this.lblAmountPaidLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblAmountPaidLabel.ForeColor = System.Drawing.Color.Black;
-            this.lblAmountPaidLabel.Location = new System.Drawing.Point(350, 40);
-            this.lblAmountPaidLabel.Name = "lblAmountPaidLabel";
-            this.lblAmountPaidLabel.Size = new System.Drawing.Size(85, 15);
-            this.lblAmountPaidLabel.TabIndex = 8;
-            this.lblAmountPaidLabel.Text = "Amount Paid:";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblStatus.ForeColor = System.Drawing.Color.Blue;
+            this.lblStatus.Location = new System.Drawing.Point(450, 90);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(97, 15);
+            this.lblStatus.TabIndex = 11;
+            this.lblStatus.Text = "New Enrollment";
             // 
             // txtAmountPaid
             // 
@@ -508,27 +430,49 @@ namespace IUIS.Forms.Enrollment
             this.txtAmountPaid.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtAmountPaid.TextChanged += new System.EventHandler(this.txtAmountPaid_TextChanged);
             // 
-            // lblStatusLabel
+            // lblTotalAssessment
             // 
-            this.lblStatusLabel.AutoSize = true;
-            this.lblStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblStatusLabel.ForeColor = System.Drawing.Color.Black;
-            this.lblStatusLabel.Location = new System.Drawing.Point(350, 90);
-            this.lblStatusLabel.Name = "lblStatusLabel";
-            this.lblStatusLabel.Size = new System.Drawing.Size(50, 15);
-            this.lblStatusLabel.TabIndex = 10;
-            this.lblStatusLabel.Text = "Status:";
+            this.lblTotalAssessment.AutoSize = true;
+            this.lblTotalAssessment.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTotalAssessment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(76)))));
+            this.lblTotalAssessment.Location = new System.Drawing.Point(150, 115);
+            this.lblTotalAssessment.Name = "lblTotalAssessment";
+            this.lblTotalAssessment.Size = new System.Drawing.Size(31, 15);
+            this.lblTotalAssessment.TabIndex = 7;
+            this.lblTotalAssessment.Text = "0.00";
             // 
-            // lblStatus
+            // lblMiscFee
             // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblStatus.ForeColor = System.Drawing.Color.Blue;
-            this.lblStatus.Location = new System.Drawing.Point(450, 90);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(95, 15);
-            this.lblStatus.TabIndex = 11;
-            this.lblStatus.Text = "New Enrollment";
+            this.lblMiscFee.AutoSize = true;
+            this.lblMiscFee.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblMiscFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblMiscFee.Location = new System.Drawing.Point(150, 90);
+            this.lblMiscFee.Name = "lblMiscFee";
+            this.lblMiscFee.Size = new System.Drawing.Size(31, 15);
+            this.lblMiscFee.TabIndex = 5;
+            this.lblMiscFee.Text = "0.00";
+            // 
+            // lblTuitionFee
+            // 
+            this.lblTuitionFee.AutoSize = true;
+            this.lblTuitionFee.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTuitionFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblTuitionFee.Location = new System.Drawing.Point(150, 65);
+            this.lblTuitionFee.Name = "lblTuitionFee";
+            this.lblTuitionFee.Size = new System.Drawing.Size(31, 15);
+            this.lblTuitionFee.TabIndex = 3;
+            this.lblTuitionFee.Text = "0.00";
+            // 
+            // lblTotalUnits
+            // 
+            this.lblTotalUnits.AutoSize = true;
+            this.lblTotalUnits.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTotalUnits.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblTotalUnits.Location = new System.Drawing.Point(150, 40);
+            this.lblTotalUnits.Name = "lblTotalUnits";
+            this.lblTotalUnits.Size = new System.Drawing.Size(14, 15);
+            this.lblTotalUnits.TabIndex = 1;
+            this.lblTotalUnits.Text = "0";
             // 
             // lblBalanceLabel
             // 
@@ -537,24 +481,79 @@ namespace IUIS.Forms.Enrollment
             this.lblBalanceLabel.ForeColor = System.Drawing.Color.Black;
             this.lblBalanceLabel.Location = new System.Drawing.Point(350, 115);
             this.lblBalanceLabel.Name = "lblBalanceLabel";
-            this.lblBalanceLabel.Size = new System.Drawing.Size(60, 15);
+            this.lblBalanceLabel.Size = new System.Drawing.Size(53, 15);
             this.lblBalanceLabel.TabIndex = 12;
             this.lblBalanceLabel.Text = "Balance:";
             // 
-            // lblBalance
+            // lblStatusLabel
             // 
-            this.lblBalance.AutoSize = true;
-            this.lblBalance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblBalance.ForeColor = System.Drawing.Color.Red;
-            this.lblBalance.Location = new System.Drawing.Point(450, 115);
-            this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(44, 15);
-            this.lblBalance.TabIndex = 13;
-            this.lblBalance.Text = "0.00";
+            this.lblStatusLabel.AutoSize = true;
+            this.lblStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblStatusLabel.ForeColor = System.Drawing.Color.Black;
+            this.lblStatusLabel.Location = new System.Drawing.Point(350, 90);
+            this.lblStatusLabel.Name = "lblStatusLabel";
+            this.lblStatusLabel.Size = new System.Drawing.Size(42, 15);
+            this.lblStatusLabel.TabIndex = 10;
+            this.lblStatusLabel.Text = "Status:";
+            // 
+            // lblAmountPaidLabel
+            // 
+            this.lblAmountPaidLabel.AutoSize = true;
+            this.lblAmountPaidLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblAmountPaidLabel.ForeColor = System.Drawing.Color.Black;
+            this.lblAmountPaidLabel.Location = new System.Drawing.Point(350, 40);
+            this.lblAmountPaidLabel.Name = "lblAmountPaidLabel";
+            this.lblAmountPaidLabel.Size = new System.Drawing.Size(80, 15);
+            this.lblAmountPaidLabel.TabIndex = 8;
+            this.lblAmountPaidLabel.Text = "Amount Paid:";
+            // 
+            // lblTotalLabel
+            // 
+            this.lblTotalLabel.AutoSize = true;
+            this.lblTotalLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTotalLabel.ForeColor = System.Drawing.Color.Black;
+            this.lblTotalLabel.Location = new System.Drawing.Point(20, 115);
+            this.lblTotalLabel.Name = "lblTotalLabel";
+            this.lblTotalLabel.Size = new System.Drawing.Size(105, 15);
+            this.lblTotalLabel.TabIndex = 6;
+            this.lblTotalLabel.Text = "Total Assessment:";
+            // 
+            // lblMiscLabel
+            // 
+            this.lblMiscLabel.AutoSize = true;
+            this.lblMiscLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblMiscLabel.ForeColor = System.Drawing.Color.Black;
+            this.lblMiscLabel.Location = new System.Drawing.Point(20, 90);
+            this.lblMiscLabel.Name = "lblMiscLabel";
+            this.lblMiscLabel.Size = new System.Drawing.Size(106, 15);
+            this.lblMiscLabel.TabIndex = 4;
+            this.lblMiscLabel.Text = "Miscellaneous Fee:";
+            // 
+            // lblTuitionLabel
+            // 
+            this.lblTuitionLabel.AutoSize = true;
+            this.lblTuitionLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblTuitionLabel.ForeColor = System.Drawing.Color.Black;
+            this.lblTuitionLabel.Location = new System.Drawing.Point(20, 65);
+            this.lblTuitionLabel.Name = "lblTuitionLabel";
+            this.lblTuitionLabel.Size = new System.Drawing.Size(68, 15);
+            this.lblTuitionLabel.TabIndex = 2;
+            this.lblTuitionLabel.Text = "Tuition Fee:";
+            // 
+            // lblUnitsLabel
+            // 
+            this.lblUnitsLabel.AutoSize = true;
+            this.lblUnitsLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblUnitsLabel.ForeColor = System.Drawing.Color.Black;
+            this.lblUnitsLabel.Location = new System.Drawing.Point(20, 40);
+            this.lblUnitsLabel.Name = "lblUnitsLabel";
+            this.lblUnitsLabel.Size = new System.Drawing.Size(65, 15);
+            this.lblUnitsLabel.TabIndex = 0;
+            this.lblUnitsLabel.Text = "Total Units:";
             // 
             // btnEnroll
             // 
-            this.btnEnroll.BackColor = System.Drawing.Color.FromArgb(0, 153, 76);
+            this.btnEnroll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(76)))));
             this.btnEnroll.FlatAppearance.BorderSize = 0;
             this.btnEnroll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnroll.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
@@ -569,7 +568,7 @@ namespace IUIS.Forms.Enrollment
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(204, 0, 0);
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
@@ -584,7 +583,7 @@ namespace IUIS.Forms.Enrollment
             // 
             // btnPrintAssessment
             // 
-            this.btnPrintAssessment.BackColor = System.Drawing.Color.FromArgb(0, 102, 204);
+            this.btnPrintAssessment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.btnPrintAssessment.FlatAppearance.BorderSize = 0;
             this.btnPrintAssessment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintAssessment.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
@@ -601,12 +600,14 @@ namespace IUIS.Forms.Enrollment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(1084, 720);
+            this.Controls.Add(this.lblStudYear);
             this.Controls.Add(this.btnPrintAssessment);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEnroll);
             this.Controls.Add(this.grpFees);
+            this.Controls.Add(this.lblYearLabel);
             this.Controls.Add(this.grpSubjectSelection);
             this.Controls.Add(this.grpEnrollmentDetails);
             this.Controls.Add(this.grpStudentInfo);
@@ -615,6 +616,8 @@ namespace IUIS.Forms.Enrollment
             this.Name = "EnrollmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enrollment Management";
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
             this.grpStudentInfo.ResumeLayout(false);
             this.grpStudentInfo.PerformLayout();
             this.grpEnrollmentDetails.ResumeLayout(false);
@@ -625,6 +628,7 @@ namespace IUIS.Forms.Enrollment
             this.grpFees.ResumeLayout(false);
             this.grpFees.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
