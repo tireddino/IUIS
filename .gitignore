@@ -1,25 +1,55 @@
-```
-# Build artifacts
-*.obj
-*.exe
-*.dll
-*.pdb
-*.userprefs
-*.cache
-*.tmp
-*.log
-
-# Dependencies
-packages/
-bin/
-obj/
-
-# IDE specific
-.vs/
-*.user
-*.suo
-Debug/
-Release/
+```csharp
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
 x64/
 x86/
+[Dd]epends/
+[Bb]uild/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio files
+*.user
+*.userosscache
+*.suo
+*.csproj.user
+*.vbproj.user
+*.fsproj.user
+*.userprefs
+
+# Visual Studio Code files
+.vscode/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NUnit
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+
+# Backup files
+*.bak
+
+# Log files
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Environment specific settings
+.env
+.env.local
+*.env.*
 ```

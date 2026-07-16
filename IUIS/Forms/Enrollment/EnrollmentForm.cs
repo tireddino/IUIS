@@ -235,7 +235,7 @@ namespace IUIS.Forms.Enrollment
 
             var subject = (Subject)cmbSubjectList.SelectedItem;
             
-            if (_selectedSubjects.Any(s => s.Code == subject.Code))
+            if (_selectedSubjects.Any(s => s.SubjectCode == subject.SubjectCode))
             {
                 MessageBox.Show("Subject already added!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
