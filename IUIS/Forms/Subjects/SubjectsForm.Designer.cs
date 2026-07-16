@@ -300,6 +300,13 @@ namespace IUIS.Forms.Subjects
             this.dgvSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSubjects.Size = new System.Drawing.Size(580, 430);
             this.dgvSubjects.TabIndex = 1;
+            this.dgvSubjects.AutoGenerateColumns = false;
+            this.dgvSubjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+                new System.Windows.Forms.DataGridViewTextBoxColumn { Name = "SubjectCodeColumn", HeaderText = "Code", DataPropertyName = "SubjectCode", Width = 100 },
+                new System.Windows.Forms.DataGridViewTextBoxColumn { Name = "SubjectNameColumn", HeaderText = "Subject Name", DataPropertyName = "SubjectName", Width = 200 },
+                new System.Windows.Forms.DataGridViewTextBoxColumn { Name = "DescriptionColumn", HeaderText = "Description", DataPropertyName = "Description", Width = 200 },
+                new System.Windows.Forms.DataGridViewTextBoxColumn { Name = "UnitsColumn", HeaderText = "Units", DataPropertyName = "Units", Width = 60 }
+            });
             this.dgvSubjects.SelectionChanged += new System.EventHandler(this.DgvSubjects_SelectionChanged);
             // 
             // pnlSearch
