@@ -205,7 +205,7 @@ namespace IUIS.Forms.Enrollment
             if (_selectedStudent == null) return;
 
             // Get selected semester number (1, 2, or 3 for Summer)
-            int selectedSemesterNum = GetSelectedSemesterNumber();
+            int? selectedSemesterNum = GetSelectedSemesterNumber();
 
             // Filter subjects by course and year level
             var allSubjects = _subjectRepo.GetAll();
@@ -216,10 +216,22 @@ namespace IUIS.Forms.Enrollment
                 : _selectedStudent.Course;
             
             var filtered = allSubjects.Where(s => 
-                s.CourseCode == studentCourseCode && 
-                s.YearLevel == _selectedStudent.YearLevel &&
-                s.Semester == selectedSemesterNum
-            ).ToList();
+            {
+                // Course Filter: Match if subject has no course (general) OR matches student's course
+                bool courseMatch = string.IsNullOrEmpty(s.CourseCode) || 
+                                   s.CourseCode.Equals(studentCourseCode, StringComparison.OrdinalIgnoreCase);
+
+                // Year Level Filter: Match if subject has no year (general) OR matches selected year
+                bool yearMatch = s.YearLevel == 0 || 
+                                 s.YearLevel.ToString().Equals(_selectedStudent.YearLevel, StringComparison.OrdinalIgnoreCase);
+
+                // Semester Filter: Match if subject has no semester (general) OR matches selected semester
+                bool semesterMatch = !selectedSemesterNum.HasValue || 
+                                     s.Semester == 0 || 
+                                     s.Semester == selectedSemesterNum.Value;
+
+                return courseMatch && yearMatch && semesterMatch;
+            }).ToList();
 
             cmbSubjectList.DataSource = filtered;
             cmbSubjectList.DisplayMember = "DisplayName";
