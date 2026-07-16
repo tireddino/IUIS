@@ -158,13 +158,25 @@ namespace IUIS.Forms.Enrollment
             lblStudId.Text = _selectedStudent.StudentId;
             lblStudName.Text = _selectedStudent.FullName;
             
-            // Get course name from CourseId if Course is empty
+            // Get course name - try multiple approaches
             string courseName = _selectedStudent.Course;
+            
             if (string.IsNullOrEmpty(courseName) && !string.IsNullOrEmpty(_selectedStudent.CourseId))
             {
+                // First try to find by CourseCode
                 var course = _courseRepo.GetByCourseCode(_selectedStudent.CourseId);
+                
+                // If not found by code, try to find by searching all courses for matching Id or Name
+                if (course == null)
+                {
+                    var allCourses = _courseRepo.GetAll();
+                    course = allCourses.FirstOrDefault(c => c.Id == _selectedStudent.CourseId) 
+                          ?? allCourses.FirstOrDefault(c => c.CourseCode == _selectedStudent.CourseId);
+                }
+                
                 courseName = course?.CourseName ?? _selectedStudent.CourseId;
             }
+            
             lblStudCourse.Text = courseName;
             
             lblStudYear.Text = _selectedStudent.YearLevel.ToString();
