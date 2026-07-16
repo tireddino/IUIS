@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IUIS.Models;
-using IUIS.Repositories;
 using IUIS.Utilities;
 
 namespace IUIS.Forms.Enrollment
@@ -339,7 +338,7 @@ namespace IUIS.Forms.Enrollment
                     CreatedAt = DateTime.Now
                 };
 
-                _enrollmentRepo.Save(enrollment);
+                _enrollmentRepo.Add(enrollment);
 
                 if (enrollment.Balance <= 0)
                 {
