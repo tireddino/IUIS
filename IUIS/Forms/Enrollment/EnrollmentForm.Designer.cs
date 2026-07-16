@@ -11,16 +11,16 @@ namespace IUIS.Forms.Enrollment
             this.pnlTop = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.grpStudentInfo = new System.Windows.Forms.GroupBox();
-            this.lblStudYear = new System.Windows.Forms.Label();
             this.lblStudCourse = new System.Windows.Forms.Label();
             this.lblStudName = new System.Windows.Forms.Label();
             this.lblStudId = new System.Windows.Forms.Label();
-            this.lblYearLabel = new System.Windows.Forms.Label();
             this.lblCourseLabel = new System.Windows.Forms.Label();
             this.lblNameLabel = new System.Windows.Forms.Label();
             this.lblIdLabel = new System.Windows.Forms.Label();
             this.cmbStudents = new System.Windows.Forms.ComboBox();
             this.lblSelectStudent = new System.Windows.Forms.Label();
+            this.lblStudYear = new System.Windows.Forms.Label();
+            this.lblYearLabel = new System.Windows.Forms.Label();
             this.grpEnrollmentDetails = new System.Windows.Forms.GroupBox();
             this.cmbSemester = new System.Windows.Forms.ComboBox();
             this.lblSemester = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@ namespace IUIS.Forms.Enrollment
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1084, 60);
+            this.pnlTop.Size = new System.Drawing.Size(1125, 60);
             this.pnlTop.TabIndex = 0;
             // 
             // lblTitle
@@ -101,17 +101,6 @@ namespace IUIS.Forms.Enrollment
             this.grpStudentInfo.TabIndex = 1;
             this.grpStudentInfo.TabStop = false;
             this.grpStudentInfo.Text = "Student Information";
-            // 
-            // lblStudYear
-            // 
-            this.lblStudYear.AutoSize = true;
-            this.lblStudYear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblStudYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
-            this.lblStudYear.Location = new System.Drawing.Point(120, 245);
-            this.lblStudYear.Name = "lblStudYear";
-            this.lblStudYear.Size = new System.Drawing.Size(22, 15);
-            this.lblStudYear.TabIndex = 9;
-            this.lblStudYear.Text = "---";
             // 
             // lblStudCourse
             // 
@@ -145,17 +134,6 @@ namespace IUIS.Forms.Enrollment
             this.lblStudId.Size = new System.Drawing.Size(22, 15);
             this.lblStudId.TabIndex = 3;
             this.lblStudId.Text = "---";
-            // 
-            // lblYearLabel
-            // 
-            this.lblYearLabel.AutoSize = true;
-            this.lblYearLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblYearLabel.ForeColor = System.Drawing.Color.Black;
-            this.lblYearLabel.Location = new System.Drawing.Point(40, 245);
-            this.lblYearLabel.Name = "lblYearLabel";
-            this.lblYearLabel.Size = new System.Drawing.Size(62, 15);
-            this.lblYearLabel.TabIndex = 8;
-            this.lblYearLabel.Text = "Year Level:";
             // 
             // lblCourseLabel
             // 
@@ -211,6 +189,28 @@ namespace IUIS.Forms.Enrollment
             this.lblSelectStudent.Size = new System.Drawing.Size(85, 15);
             this.lblSelectStudent.TabIndex = 0;
             this.lblSelectStudent.Text = "Select Student:";
+            // 
+            // lblStudYear
+            // 
+            this.lblStudYear.AutoSize = true;
+            this.lblStudYear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblStudYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
+            this.lblStudYear.Location = new System.Drawing.Point(120, 245);
+            this.lblStudYear.Name = "lblStudYear";
+            this.lblStudYear.Size = new System.Drawing.Size(22, 15);
+            this.lblStudYear.TabIndex = 9;
+            this.lblStudYear.Text = "---";
+            // 
+            // lblYearLabel
+            // 
+            this.lblYearLabel.AutoSize = true;
+            this.lblYearLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblYearLabel.ForeColor = System.Drawing.Color.Black;
+            this.lblYearLabel.Location = new System.Drawing.Point(40, 245);
+            this.lblYearLabel.Name = "lblYearLabel";
+            this.lblYearLabel.Size = new System.Drawing.Size(62, 15);
+            this.lblYearLabel.TabIndex = 8;
+            this.lblYearLabel.Text = "Year Level:";
             // 
             // grpEnrollmentDetails
             // 
@@ -386,7 +386,7 @@ namespace IUIS.Forms.Enrollment
             this.grpFees.Controls.Add(this.lblUnitsLabel);
             this.grpFees.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.grpFees.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
-            this.grpFees.Location = new System.Drawing.Point(20, 550);
+            this.grpFees.Location = new System.Drawing.Point(26, 550);
             this.grpFees.Name = "grpFees";
             this.grpFees.Size = new System.Drawing.Size(700, 180);
             this.grpFees.TabIndex = 4;
@@ -554,7 +554,7 @@ namespace IUIS.Forms.Enrollment
             this.btnEnroll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnroll.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnEnroll.ForeColor = System.Drawing.Color.White;
-            this.btnEnroll.Location = new System.Drawing.Point(740, 580);
+            this.btnEnroll.Location = new System.Drawing.Point(746, 585);
             this.btnEnroll.Name = "btnEnroll";
             this.btnEnroll.Size = new System.Drawing.Size(150, 45);
             this.btnEnroll.TabIndex = 5;
@@ -569,7 +569,7 @@ namespace IUIS.Forms.Enrollment
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(740, 640);
+            this.btnCancel.Location = new System.Drawing.Point(746, 645);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 45);
             this.btnCancel.TabIndex = 6;
@@ -584,7 +584,7 @@ namespace IUIS.Forms.Enrollment
             this.btnPrintAssessment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintAssessment.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnPrintAssessment.ForeColor = System.Drawing.Color.White;
-            this.btnPrintAssessment.Location = new System.Drawing.Point(910, 610);
+            this.btnPrintAssessment.Location = new System.Drawing.Point(916, 615);
             this.btnPrintAssessment.Name = "btnPrintAssessment";
             this.btnPrintAssessment.Size = new System.Drawing.Size(150, 40);
             this.btnPrintAssessment.TabIndex = 7;
@@ -597,13 +597,12 @@ namespace IUIS.Forms.Enrollment
             this.grpEnrollmentHistory.Controls.Add(this.dgvEnrollmentHistory);
             this.grpEnrollmentHistory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.grpEnrollmentHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(51)))), ((int)(((byte)(102)))));
-            this.grpEnrollmentHistory.Location = new System.Drawing.Point(20, 280);
+            this.grpEnrollmentHistory.Location = new System.Drawing.Point(26, 749);
             this.grpEnrollmentHistory.Name = "grpEnrollmentHistory";
             this.grpEnrollmentHistory.Size = new System.Drawing.Size(1040, 280);
             this.grpEnrollmentHistory.TabIndex = 8;
             this.grpEnrollmentHistory.TabStop = false;
             this.grpEnrollmentHistory.Text = "Existing Enrollment Status";
-            this.grpEnrollmentHistory.Visible = false;
             // 
             // dgvEnrollmentHistory
             // 
@@ -627,7 +626,7 @@ namespace IUIS.Forms.Enrollment
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(1084, 720);
+            this.ClientSize = new System.Drawing.Size(1125, 1056);
             this.Controls.Add(this.grpEnrollmentHistory);
             this.Controls.Add(this.lblStudYear);
             this.Controls.Add(this.btnPrintAssessment);
