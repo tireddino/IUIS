@@ -183,17 +183,29 @@ namespace IUIS.Forms.Enrollment
         {
             if (_selectedStudent == null) return;
 
+            // Get selected semester number (1, 2, or 3 for Summer)
+            int selectedSemesterNum = GetSelectedSemesterNumber();
+
             // Filter subjects by course and year level
             var allSubjects = _subjectRepo.GetAll();
             var filtered = allSubjects.Where(s => 
                 s.CourseCode == _selectedStudent.Course && 
                 s.YearLevel == _selectedStudent.YearLevel &&
-                s.Semester.ToString().Contains(cmbSemester.SelectedItem?.ToString() ?? "1")
+                s.Semester == selectedSemesterNum
             ).ToList();
 
             cmbSubjectList.DataSource = filtered;
             cmbSubjectList.DisplayMember = "DisplayName";
             cmbSubjectList.ValueMember = "Code";
+        }
+
+        private int GetSelectedSemesterNumber()
+        {
+            string selectedText = cmbSemester.SelectedItem?.ToString() ?? "";
+            if (selectedText.Contains("1st")) return 1;
+            if (selectedText.Contains("2nd")) return 2;
+            if (selectedText.Contains("Summer", StringComparison.OrdinalIgnoreCase)) return 3;
+            return 1; // Default to 1st semester
         }
 
         private void btnAddSubject_Click(object sender, EventArgs e)
