@@ -1,5 +1,7 @@
 namespace IUIS.Forms.Students
 {
+    using System.Drawing;
+    
     partial class StudentForm
     {
         private System.ComponentModel.IContainer components = null;
@@ -18,6 +20,8 @@ namespace IUIS.Forms.Students
         private void InitializeComponent()
         {
             this.pnlForm = new System.Windows.Forms.Panel();
+            this.grpEnrollmentHistory = new System.Windows.Forms.GroupBox();
+            this.dgvEnrollmentHistory = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();

@@ -1,92 +1,91 @@
-```gitignore
-# Build artifacts and binaries
+```
+# Build artifacts
+*.obj
 *.exe
 *.dll
-*.pdb
-*.obj
-*.lib
 *.so
-*.dylib
-*.class
+*.a
+*.lib
+*.pdb
+*.ilk
+*.exp
+*.iobj
+*.ipdb
+*.tlog
+*.lastbuildstate
 
-# Dependencies
-packages/
-node_modules/
-venv/
-.venv/
-__pycache__/
-*.egg-info/
-
-# IDE specific
+# Visual Studio/Visual Studio Code files
 .vs/
 .vscode/
-.idea/
-*.userprefs
 *.user
-*.suo
 *.userosscache
-*.sln.docstates
+*.suo
+*.csproj.user
+*.vbproj.user
+*.userprefs
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+*.log
 
 # OS generated files
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
+Thumbs.db
 ehthumbs.db
+Icon?
+._*
+
+# Compiled source
+*.nib
+*.plist
+*.pch
+*.gch
+*.gcda
+*.gcno
+*.gcov
+*.lo
+
+# Dependencies
+node_modules/
+vendor/bundle/
+julia-*/
+zig*/
+
+# Distribution / packaging
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.gitattributes
+.project
+.pydevproject
+*.swp
+*.swo
+*~
+.DS_Store
 Thumbs.db
 
-# Logs
-*.log
-
-# Temp files
-*.tmp
-*.temp
-*~
-
-# Configuration and environment
-.env
-.env.local
-*.env.*
-config/
-appsettings*.json
-
-# Build outputs
-bin/
-obj/
-Debug/
-Release/
-build/
-dist/
-target/
-
 # Testing
-coverage/
 htmlcov/
-*.coverage
-.nyc_output/
-
-# Compression
-*.zip
-*.gz
-*.tar
-*.tgz
-*.bz2
-*.xz
-*.7z
-*.rar
-*.zst
-*.lz4
-*.lzh
-*.cab
-*.arj
-*.rpm
-*.deb
-*.Z
-*.lz
-*.lzo
-*.tar.gz
-*.tar.bz2
-*.tar.xz
-*.tar.zst
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
 ```
