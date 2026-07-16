@@ -826,7 +826,16 @@ namespace IUIS.Forms.Subjects
             subject.Units = (int)numUnits.Value;
             subject.Semester = (int)numSemester.Value;
             subject.YearLevel = (int)numYearLevel.Value;
-            subject.CourseCode = cmbCourse.SelectedValue?.ToString() ?? string.Empty;
+            
+            // Get the CourseCode from the selected course object, not the Id
+            if (cmbCourse.SelectedItem is Course selectedCourse)
+            {
+                subject.CourseCode = selectedCourse.CourseCode;
+            }
+            else
+            {
+                subject.CourseCode = string.Empty;
+            }
             
             var prereqs = txtPrerequisites.Text.Split(new[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(p => p.Trim().ToUpper()).ToArray();
