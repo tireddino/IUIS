@@ -26,7 +26,6 @@ namespace IUIS.Forms.Students
             InitializeForm();
             LoadStudents();
             LoadCourses();
-            SetupEnrollmentHistoryGrid();
         }
 
         private void InitializeForm()
@@ -164,74 +163,6 @@ namespace IUIS.Forms.Students
             dgvStudents.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvStudents.EnableHeadersVisualStyles = false;
             dgvStudents.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 247, 250);
-        }
-
-        private void SetupEnrollmentHistoryGrid()
-        {
-            grpEnrollmentHistory.Visible = false;
-            dgvEnrollmentHistory.AutoGenerateColumns = false;
-            dgvEnrollmentHistory.Columns.Clear();
-            
-            dgvEnrollmentHistory.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "AcademicYear",
-                HeaderText = "Academic Year",
-                Width = 120
-            });
-            
-            dgvEnrollmentHistory.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "Semester",
-                HeaderText = "Semester",
-                Width = 80
-            });
-            
-            dgvEnrollmentHistory.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "TotalUnits",
-                HeaderText = "Units",
-                Width = 60
-            });
-            
-            dgvEnrollmentHistory.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "TotalAssessment",
-                HeaderText = "Assessment",
-                Width = 100
-            });
-            
-            dgvEnrollmentHistory.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "AmountPaid",
-                HeaderText = "Paid",
-                Width = 100
-            });
-            
-            dgvEnrollmentHistory.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "Balance",
-                HeaderText = "Balance",
-                Width = 100
-            });
-            
-            dgvEnrollmentHistory.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                DataPropertyName = "Status",
-                HeaderText = "Status",
-                Width = 120
-            });
-            
-            dgvEnrollmentHistory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEnrollmentHistory.ReadOnly = true;
-            dgvEnrollmentHistory.AllowUserToAddRows = false;
-            dgvEnrollmentHistory.BackgroundColor = Color.White;
-            dgvEnrollmentHistory.GridColor = Color.FromArgb(230, 230, 230);
-            dgvEnrollmentHistory.RowHeadersVisible = false;
-            dgvEnrollmentHistory.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            dgvEnrollmentHistory.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 73, 94);
-            dgvEnrollmentHistory.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvEnrollmentHistory.EnableHeadersVisualStyles = false;
-            dgvEnrollmentHistory.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 247, 250);
         }
 
         private void LoadStudents()
@@ -507,49 +438,8 @@ namespace IUIS.Forms.Students
                     if (student != null)
                     {
                         PopulateFields(student);
-                        LoadEnrollmentHistory(student.StudentId);
                     }
                 }
-            }
-        }
-
-        private void LoadEnrollmentHistory(string studentId)
-        {
-            try
-            {
-                var enrollments = _enrollmentRepository.GetAll()
-                    .Where(enr => enr.StudentId == studentId)
-                    .OrderByDescending(enr => enr.CreatedAt)
-                    .ToList();
-
-                if (enrollments.Count > 0)
-                {
-                    grpEnrollmentHistory.Visible = true;
-                    
-                    var enrollmentData = enrollments.Select(enr => new
-                    {
-                        enr.AcademicYear,
-                        enr.Semester,
-                        enr.TotalUnits,
-                        TotalAssessment = enr.TotalAssessment.ToString("C2"),
-                        AmountPaid = enr.AmountPaid.ToString("C2"),
-                        Balance = enr.Balance.ToString("C2"),
-                        enr.Status
-                    }).ToList();
-                    
-                    dgvEnrollmentHistory.DataSource = null;
-                    dgvEnrollmentHistory.DataSource = enrollmentData;
-                }
-                else
-                {
-                    grpEnrollmentHistory.Visible = false;
-                    dgvEnrollmentHistory.DataSource = null;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading enrollment history: {ex.Message}", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
