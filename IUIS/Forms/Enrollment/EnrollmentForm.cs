@@ -222,8 +222,8 @@ namespace IUIS.Forms.Enrollment
                                    s.CourseCode.Equals(studentCourseCode, StringComparison.OrdinalIgnoreCase);
 
                 // Year Level Filter: Match if subject has no year (general) OR matches selected year
-                bool yearMatch = string.IsNullOrEmpty(s.YearLevel) || 
-                                 s.YearLevel.Equals(_selectedStudent.YearLevel, StringComparison.OrdinalIgnoreCase);
+                bool yearMatch = s.YearLevel == 0 || 
+                                 s.YearLevel.ToString().Equals(_selectedStudent.YearLevel, StringComparison.OrdinalIgnoreCase);
 
                 // Semester Filter: Match if subject has no semester (general) OR matches selected semester
                 bool semesterMatch = !selectedSemesterNum.HasValue || 

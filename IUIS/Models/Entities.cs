@@ -131,9 +131,6 @@ namespace IUIS.Models
         [JsonPropertyName("yearLevel")]
         public int YearLevel { get; set; }
 
-        [JsonPropertyName("courseId")]
-        public string CourseId { get; set; } = string.Empty;
-
         [JsonPropertyName("courseCode")]
         public string CourseCode { get; set; } = string.Empty;
 
@@ -151,9 +148,6 @@ namespace IUIS.Models
 
         [JsonPropertyName("studentId")]
         public string StudentId { get; set; } = string.Empty;
-
-        [JsonPropertyName("courseId")]
-        public string CourseId { get; set; } = string.Empty;
 
         [JsonPropertyName("academicYear")]
         public string AcademicYear { get; set; } = string.Empty;
