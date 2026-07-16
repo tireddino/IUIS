@@ -101,8 +101,29 @@ namespace IUIS.Forms.Enrollment
 
         private void LoadStudents()
         {
-            var students = _studentRepo.GetAll();
-            cmbStudents.DataSource = students;
+            var allStudents = _studentRepo.GetAll();
+            
+            // Get all existing enrollments to filter out already enrolled students
+            var allEnrollments = _enrollmentRepo.GetAll();
+            string currentTerm = GetSelectedTerm();
+            
+            // Get student IDs that are already enrolled for the current term
+            var enrolledStudentIds = new HashSet<string>();
+            if (!string.IsNullOrEmpty(currentTerm))
+            {
+                enrolledStudentIds = allEnrollments
+                    .Where(e => e.Term == currentTerm)
+                    .Select(e => e.StudentId)
+                    .ToHashSet();
+            }
+            
+            // Filter out students who are already enrolled
+            var availableStudents = allStudents
+                .Where(s => !enrolledStudentIds.Contains(s.StudentId))
+                .ToList();
+            
+            cmbStudents.DataSource = null;
+            cmbStudents.DataSource = availableStudents;
             cmbStudents.DisplayMember = "FullName";
             cmbStudents.ValueMember = "Id";
             cmbStudents.SelectedIndex = -1;
@@ -361,6 +382,14 @@ namespace IUIS.Forms.Enrollment
         {
             LoadAvailableSubjects();
             ClearSelections();
+            // Reload students to update the list based on the new term
+            LoadStudents();
+        }
+
+        private void cmbAcadYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Reload students to update the list based on the new academic year
+            LoadStudents();
         }
 
         private void LoadExistingEnrollment(EnrollmentModel enrollment)
