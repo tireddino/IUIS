@@ -730,6 +730,14 @@ namespace IUIS.Forms.Subjects
             try
             {
                 var subjects = _subjectRepository.GetAll().Where(s => s.IsActive).ToList();
+                
+                // Filter by selected course if a course is selected
+                if (cmbCourse.SelectedItem != null)
+                {
+                    var selectedCourse = (Course)cmbCourse.SelectedItem;
+                    subjects = subjects.Where(s => s.CourseId == selectedCourse.Id).ToList();
+                }
+                
                 dgvSubjects.DataSource = null;
                 dgvSubjects.DataSource = subjects;
                 lblRecordCount.Text = $"Total Records: {subjects.Count}";
@@ -945,6 +953,13 @@ namespace IUIS.Forms.Subjects
                 var searchTerm = txtSearch.Text.Trim();
                 var subjects = _subjectRepository.GetAll().Where(s => s.IsActive).ToList();
                 
+                // Filter by selected course if a course is selected
+                if (cmbCourse.SelectedItem != null)
+                {
+                    var selectedCourse = (Course)cmbCourse.SelectedItem;
+                    subjects = subjects.Where(s => s.CourseId == selectedCourse.Id).ToList();
+                }
+                
                 if (!string.IsNullOrEmpty(searchTerm))
                 {
                     subjects = subjects.Where(s => 
@@ -963,6 +978,11 @@ namespace IUIS.Forms.Subjects
                 MessageBox.Show($"Error searching subjects: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        
+        private void CmbCourse_SelectedIndexChanged(object? sender, EventArgs e)
+        {
+            LoadSubjects();
         }
     }
 }
