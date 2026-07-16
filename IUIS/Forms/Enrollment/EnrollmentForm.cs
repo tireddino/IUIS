@@ -211,10 +211,21 @@ namespace IUIS.Forms.Enrollment
             // Filter subjects by course and year level
             var allSubjects = _subjectRepo.GetAll();
             
-            // Use CourseId from student to match with CourseCode in subjects
-            string studentCourseCode = !string.IsNullOrEmpty(_selectedStudent.CourseId) 
-                ? _selectedStudent.CourseId 
-                : _selectedStudent.Course;
+            // Get the actual CourseCode from the student's CourseId (which is a GUID)
+            string studentCourseCode = string.Empty;
+            if (!string.IsNullOrEmpty(_selectedStudent.CourseId))
+            {
+                // CourseId is a GUID, so we need to find the course and get its CourseCode
+                var studentCourse = _courseRepo.GetByCourseCode(_selectedStudent.CourseId) 
+                                 ?? _courseRepo.GetAll().FirstOrDefault(c => c.Id == _selectedStudent.CourseId);
+                studentCourseCode = studentCourse?.CourseCode ?? string.Empty;
+            }
+            
+            // Fallback to the Course property if CourseId didn't yield a result
+            if (string.IsNullOrEmpty(studentCourseCode))
+            {
+                studentCourseCode = _selectedStudent.Course;
+            }
             
             var filtered = allSubjects.Where(s => 
             {
