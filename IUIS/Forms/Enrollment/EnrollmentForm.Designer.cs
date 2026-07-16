@@ -60,12 +60,16 @@ namespace IUIS.Forms.Enrollment
             this.btnEnroll = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPrintAssessment = new System.Windows.Forms.Button();
+            this.grpEnrollmentHistory = new System.Windows.Forms.GroupBox();
+            this.dgvEnrollmentHistory = new System.Windows.Forms.DataGridView();
             this.pnlTop.SuspendLayout();
             this.grpStudentInfo.SuspendLayout();
             this.grpEnrollmentDetails.SuspendLayout();
             this.grpSubjectSelection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSelectedSubjects)).BeginInit();
             this.grpFees.SuspendLayout();
+            this.grpEnrollmentHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollmentHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
