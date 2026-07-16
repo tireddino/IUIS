@@ -204,7 +204,7 @@ namespace IUIS.Forms.Enrollment
             string selectedText = cmbSemester.SelectedItem?.ToString() ?? "";
             if (selectedText.Contains("1st")) return 1;
             if (selectedText.Contains("2nd")) return 2;
-            if (selectedText.Contains("Summer", StringComparison.OrdinalIgnoreCase)) return 3;
+            if (selectedText.IndexOf("Summer", StringComparison.OrdinalIgnoreCase) >= 0) return 3;
             return 1; // Default to 1st semester
         }
 
