@@ -10,8 +10,8 @@ namespace IUIS.Forms.Students
 {
     public partial class StudentForm : Form
     {
-        private readonly StudentRepository _studentRepository;
-        private readonly CourseRepository _courseRepository;
+        private readonly StudentRepository _studentRepository = null!;
+        private readonly CourseRepository _courseRepository = null!;
         private Student? _currentStudent;
         private bool _isEditMode;
 
@@ -260,7 +260,10 @@ namespace IUIS.Forms.Students
             }
             
             numYearLevel.Value = student.YearLevel;
-            cbEnrollmentStatus.SelectedItem = student.EnrollmentStatus;
+            if (cbEnrollmentStatus.Items.Contains(student.EnrollmentStatus))
+            {
+                cbEnrollmentStatus.SelectedItem = student.EnrollmentStatus;
+            }
             dtpDateOfBirth.Value = student.DateOfBirth;
             
             btnSave.Text = "Update";
@@ -418,7 +421,7 @@ namespace IUIS.Forms.Students
             if (dgvStudents.SelectedRows.Count > 0 && dgvStudents.Rows.Count > 0)
             {
                 var row = dgvStudents.SelectedRows[0];
-                string studentId = null;
+                string? studentId = null;
                 
                 // Safely get the StudentId value
                 if (row.Cells.Count > 0 && row.Cells[0].Value != null)
@@ -428,7 +431,7 @@ namespace IUIS.Forms.Students
                 
                 if (!string.IsNullOrEmpty(studentId))
                 {
-                    var student = _studentRepository.GetByStudentId(studentId);
+                    var student = _studentRepository.GetByStudentId(studentId!);
                     if (student != null)
                     {
                         PopulateFields(student);

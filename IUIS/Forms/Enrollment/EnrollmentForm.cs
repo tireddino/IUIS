@@ -15,13 +15,13 @@ namespace IUIS.Forms.Enrollment
 {
     public partial class EnrollmentForm : Form
     {
-        private readonly StudentRepository _studentRepo;
-        private readonly SubjectRepository _subjectRepo;
-        private readonly EnrollmentRepository _enrollmentRepo;
-        private readonly CourseRepository _courseRepo;
+        private StudentRepository _studentRepo = null!;
+        private SubjectRepository _subjectRepo = null!;
+        private EnrollmentRepository _enrollmentRepo = null!;
+        private CourseRepository _courseRepo = null!;
 
-        private Student _selectedStudent;
-        private List<Subject> _selectedSubjects;
+        private Student? _selectedStudent;
+        private List<Subject> _selectedSubjects = new List<Subject>();
         private decimal _miscellaneousFee = 3500.00m; // Base misc fee
         private decimal _tuitionPerUnit = 1200.00m;   // Estimated per unit cost
 
@@ -33,7 +33,6 @@ namespace IUIS.Forms.Enrollment
             LoadStudents();
             LoadAcademicYears();
             
-            _selectedSubjects = new List<Subject>();
             dgvSelectedSubjects.DataSource = null;
             dgvSelectedSubjects.AutoGenerateColumns = false;
             SetupSubjectGridColumns();
@@ -347,7 +346,7 @@ namespace IUIS.Forms.Enrollment
                     _studentRepo.Update(_selectedStudent);
                 }
 
-                MessageBox.Show("Enrollment saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Success);
+                MessageBox.Show("Enrollment saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 LoadStudents();
                 ClearForm();
