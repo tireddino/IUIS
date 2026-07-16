@@ -217,7 +217,7 @@ namespace IUIS.Forms.Enrollment
 
             cmbSubjectList.DataSource = filtered;
             cmbSubjectList.DisplayMember = "DisplayName";
-            cmbSubjectList.ValueMember = "Code";
+            cmbSubjectList.ValueMember = "SubjectCode";
         }
 
         private int GetSelectedSemesterNumber()
