@@ -57,6 +57,8 @@ namespace IUIS.Forms.Students
             ((System.ComponentModel.ISupportInitialize)(this.numYearLevel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             this.pnlSearch.SuspendLayout();
+            this.grpEnrollmentHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollmentHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlForm
@@ -416,23 +418,54 @@ namespace IUIS.Forms.Students
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
+            // grpEnrollmentHistory
+            // 
+            this.grpEnrollmentHistory.Controls.Add(this.dgvEnrollmentHistory);
+            this.grpEnrollmentHistory.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.grpEnrollmentHistory.ForeColor = Color.FromArgb(0, 51, 102);
+            this.grpEnrollmentHistory.Location = new System.Drawing.Point(334, 69);
+            this.grpEnrollmentHistory.Name = "grpEnrollmentHistory";
+            this.grpEnrollmentHistory.Size = new System.Drawing.Size(729, 493);
+            this.grpEnrollmentHistory.TabIndex = 3;
+            this.grpEnrollmentHistory.TabStop = false;
+            this.grpEnrollmentHistory.Text = "Enrollment History";
+            // 
+            // dgvEnrollmentHistory
+            // 
+            this.dgvEnrollmentHistory.AllowUserToAddRows = false;
+            this.dgvEnrollmentHistory.AllowUserToDeleteRows = false;
+            this.dgvEnrollmentHistory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEnrollmentHistory.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEnrollmentHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEnrollmentHistory.Location = new System.Drawing.Point(6, 25);
+            this.dgvEnrollmentHistory.MultiSelect = false;
+            this.dgvEnrollmentHistory.Name = "dgvEnrollmentHistory";
+            this.dgvEnrollmentHistory.ReadOnly = true;
+            this.dgvEnrollmentHistory.RowHeadersVisible = false;
+            this.dgvEnrollmentHistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEnrollmentHistory.Size = new System.Drawing.Size(717, 462);
+            this.dgvEnrollmentHistory.TabIndex = 0;
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 597);
+            this.Controls.Add(this.grpEnrollmentHistory);
             this.Controls.Add(this.pnlSearch);
             this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.pnlForm);
             this.Name = "StudentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Student Management";
-            this.pnlForm.ResumeLayout(false);
-            this.pnlForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numYearLevel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollmentHistory)).EndInit();
+            this.grpEnrollmentHistory.ResumeLayout(false);
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numYearLevel)).EndInit();
+            this.pnlForm.ResumeLayout(false);
+            this.pnlForm.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -475,5 +508,7 @@ namespace IUIS.Forms.Students
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.Label lblRecordCount;
+        private System.Windows.Forms.GroupBox grpEnrollmentHistory;
+        private System.Windows.Forms.DataGridView dgvEnrollmentHistory;
     }
 }

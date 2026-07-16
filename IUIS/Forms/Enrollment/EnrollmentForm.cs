@@ -360,7 +360,37 @@ namespace IUIS.Forms.Enrollment
 
         private void LoadExistingEnrollment(EnrollmentModel enrollment)
         {
-            MessageBox.Show($"Loading existing enrollment for {GetSelectedTerm()}", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"This student already has an existing enrollment for {GetSelectedTerm()}. Duplicate enrollment is not allowed.", "Already Enrolled", 
+                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            
+            // Disable enrollment controls
+            btnEnroll.Enabled = false;
+            btnAddSubject.Enabled = false;
+            btnRemoveSubject.Enabled = false;
+            cmbSubjectList.Enabled = false;
+            txtAmountPaid.Enabled = false;
+            
+            // Show existing enrollment data
+            _selectedSubjects = enrollment.Subjects ?? new List<Subject>();
+            RefreshSubjectGrid();
+            
+            lblTotalUnits.Text = enrollment.TotalUnits.ToString();
+            lblTuitionFee.Text = enrollment.TuitionFee.ToString("C2");
+            lblMiscFee.Text = enrollment.MiscellaneousFee.ToString("C2");
+            lblTotalAssessment.Text = enrollment.TotalAssessment.ToString("C2");
+            txtAmountPaid.Text = enrollment.AmountPaid.ToString();
+            lblBalance.Text = enrollment.Balance.ToString("C2");
+            
+            if (enrollment.Balance <= 0)
+            {
+                lblStatus.Text = "FULLY ENROLLED";
+                lblStatus.ForeColor = Color.Green;
+            }
+            else
+            {
+                lblStatus.Text = "PENDING PAYMENT";
+                lblStatus.ForeColor = Color.OrangeRed;
+            }
         }
 
         private void ClearSelections()
