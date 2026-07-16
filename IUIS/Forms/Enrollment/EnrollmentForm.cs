@@ -203,7 +203,18 @@ namespace IUIS.Forms.Enrollment
 
         private void LoadAvailableSubjects()
         {
-            if (_selectedStudent == null) return;
+            if (_selectedStudent == null) 
+            {
+                cmbSubjectList.DataSource = null;
+                return;
+            }
+
+            // Check if semester is selected
+            if (cmbSemester.SelectedItem == null)
+            {
+                cmbSubjectList.DataSource = null;
+                return;
+            }
 
             // Get selected semester number (1, 2, or 3 for Summer)
             int? selectedSemesterNum = GetSelectedSemesterNumber();
